@@ -4,9 +4,9 @@ WBS mempertahankan tujuh kelompok dan aktivitas yang tercantum dalam DigitalTwin
 
 | ID | Kelompok / aktivitas | Deliverable | PIC utama (dasar sumber) | Status bukti | Dependensi |
 |---|---|---|---|---|---|
-| 1.1 | Manajemen Proyek — Project Charter | Charter proyek | Dara Anggun Fransisca (Project Manager) | Dokumentasi awal tersedia | Konteks proyek |
-| 1.2 | Manajemen Proyek — Stakeholder Register | Daftar pihak, kepentingan, pengaruh | Dara Anggun Fransisca | Dokumentasi awal tersedia | Konteks stakeholder |
-| 1.3 | Manajemen Proyek — WBS | Rincian paket kerja | Dara Anggun Fransisca | Dokumentasi awal tersedia | Struktur proyek |
+| 1.1 | Manajemen Proyek — Project Charter | Charter proyek | Dara Anggun Fransisca (Project Manager) | Sudah dipush di branch `docs/dara`; belum masuk `main` | Konteks proyek |
+| 1.2 | Manajemen Proyek — Stakeholder Register | Daftar pihak, kepentingan, pengaruh | Dara Anggun Fransisca | Sudah dipush di branch `docs/dara`; belum masuk `main` | Konteks stakeholder |
+| 1.3 | Manajemen Proyek — WBS | Rincian paket kerja | Dara Anggun Fransisca | Sudah dipush di branch `docs/dara`; belum masuk `main` | Struktur proyek |
 | 1.4 | Manajemen Proyek — pembagian tugas dan koordinasi sprint | Pembagian dan catatan koordinasi | Dara Anggun Fransisca; tim | Belum dikerjakan / bukti belum tersedia | Kesepakatan tim |
 | 2.1 | Survei dan Analisis Kebutuhan — wawancara pemilik | Catatan wawancara | Tim; pewawancara yang tercatat: Dara, Lutfiah, Raisa | Ringkasan tercantum pada PDF; bukti primer perlu dikonfirmasi | Ketersediaan/izin pemilik |
 | 2.2 | Survei dan Analisis Kebutuhan — dokumentasi survei | Bukti dan ringkasan survei | Raisa Nurfaiza (fokus dokumentasi) | Dokumentasi awal tersedia di PDF; foto tidak disalin | Izin dan bukti sumber |
@@ -25,8 +25,8 @@ WBS mempertahankan tujuh kelompok dan aktivitas yang tercantum dalam DigitalTwin
 | 4.6 | Pengembangan Aplikasi — pengingat stok menipis | Pengingat in-app | Lutfiah Naysilla Azzahra | Belum dikerjakan; di luar Sprint 1 | Ambang stok dikonfirmasi |
 | 4.7 | Pengembangan Aplikasi — integrasi database | Penyimpanan terintegrasi | Lutfiah Naysilla Azzahra | Belum dikerjakan; di luar Sprint 1 | Stack dan struktur data |
 | 4.8 | Pengembangan Aplikasi — testing | Bukti pemeriksaan aplikasi | Tim; PIC perlu disepakati | Belum dikerjakan; di luar Sprint 1 | Fitur tersedia dan kriteria disepakati |
-| 5.1 | Version Control dan Dokumentasi — repository GitHub | Repo GitHub | Dara mengoordinasikan; tim berkontribusi | Repo lokal disiapkan; GitHub belum dikaitkan | Akun/repo dan keputusan privasi |
-| 5.2 | Version Control dan Dokumentasi — commit dan push | Riwayat perubahan remote | Seluruh tim; pemilik push saat ini | Belum ada remote/push | Repo remote dan autentikasi |
+| 5.1 | Version Control dan Dokumentasi — repository GitHub | Repo GitHub | Dara mengoordinasikan; tim berkontribusi | Selesai; repository GitHub private tersedia | Undangan collaborator untuk Lutfiah dan Raisa perlu diterima |
+| 5.2 | Version Control dan Dokumentasi — commit dan push | Riwayat perubahan remote | Seluruh tim; setiap anggota pada branch masing-masing | Commit Dara `35dffcf` sudah dipush ke `docs/dara`; dokumen belum masuk `main` | Tinjau dan merge melalui Pull Request; anggota lain berkontribusi melalui branch masing-masing |
 | 5.3 | Version Control dan Dokumentasi — dokumentasi teknis | Panduan/arsitektur yang relevan | Raisa Nurfaiza (fokus dokumentasi) | Dokumentasi perencanaan awal tersedia | Keputusan teknis dan implementasi |
 | 5.4 | Version Control dan Dokumentasi — laporan setiap sprint | Laporan sprint | Raisa Nurfaiza | Tracker disiapkan; laporan siklus berikutnya belum ada | Hasil sprint dan format dosen |
 | 6.1 | Sprint Review dan Evaluasi — presentasi hasil sprint | Materi dan presentasi | Tim; PIC perlu disepakati | Belum dikerjakan | Hasil sprint dan jadwal |
@@ -38,4 +38,4 @@ WBS mempertahankan tujuh kelompok dan aktivitas yang tercantum dalam DigitalTwin
 | 7.4 | Implementasi dan Finalisasi — finalisasi produk | Produk dan dokumen akhir | Tim | Belum dikerjakan | Perbaikan dan kriteria akhir |
 | 7.5 | Implementasi dan Finalisasi — persiapan Final Product Expo | Materi Expo | Tim; PIC perlu disepakati | Belum dikerjakan | Ketentuan/jadwal pengampu |
 
-**Catatan status:** “Dokumentasi awal tersedia” berarti artefak awal dapat ditemukan, bukan persetujuan final. WBS PDF tidak menetapkan PIC per paket kerja; penetapan PIC di atas hanya menggunakan fokus peran yang tercantum atau ditandai sebagai usulan. Sumber: DigitalTwins_Daporbakes.pdf, hlm. 1–4.
+**Catatan status:** “Sudah dipush di branch `docs/dara`” berarti dokumen tersedia pada branch tersebut, belum digabung ke `main` dan belum menandakan persetujuan final dari pemilik atau dosen. Pemeriksaan repo `MPPL01022026/Kelompok-6.1` menunjukkan `main` masih berisi README awal dan branch Dara berisi tiga dokumen perencanaan. WBS PDF tidak menetapkan PIC per paket kerja; penetapan PIC di atas hanya menggunakan fokus peran yang tercantum atau ditandai sebagai usulan. Sumber: DigitalTwins_Daporbakes.pdf, hlm. 1–4; progres repository diperiksa 10 Oktober 2026.
