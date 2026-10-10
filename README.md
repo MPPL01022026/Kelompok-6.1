@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧁 Bag-Dapoorbakes
+# Bag-Dapoorbakes
 
 ### Digital Twin Persediaan Bahan Baku Daporbakes
 
@@ -26,15 +26,15 @@
 
 <a id="tentang-proyek"></a>
 
-## 🎮 Tentang Proyek
+## Tentang Proyek
 
-> 🎯 **MISI:** Menyediakan gambaran persediaan bahan baku secara digital, mencatat pergerakan stok, dan membantu pemilik mempertimbangkan kebutuhan pembelian.
+> **MISI:** Menyediakan gambaran persediaan bahan baku secara digital, mencatat pergerakan stok, dan membantu pemilik mempertimbangkan kebutuhan pembelian.
 >
-> 🧁 **STUDI KASUS:** UMKM brownies Daporbakes, Gampong Blang, Kota Langsa.
+> **STUDI KASUS:** UMKM brownies Daporbakes, Gampong Blang, Kota Langsa.
 >
-> 🏁 **TAHAP SAAT INI:** Sprint 1 — dokumentasi dan perencanaan. Aplikasi belum dibangun.
+> **TAHAP SAAT INI:** Sprint 1 - dokumentasi dan perencanaan. Aplikasi belum dibangun.
 
-Daporbakes memproduksi brownies kukus dan panggang dalam beberapa varian. Berdasarkan dokumen survei proyek, produksi rata-rata sekitar 6–7 loyang per minggu; pemesanan dilakukan secara online dan pre-order. Pemilik mengelola produksi serta persediaan sendiri, sementara pencatatan stok masih menggunakan buku tulis.
+Daporbakes memproduksi brownies kukus dan panggang dalam beberapa varian. Berdasarkan dokumen survei proyek, produksi rata-rata sekitar 6-7 loyang per minggu; pemesanan dilakukan secara online dan pre-order. Pemilik mengelola produksi serta persediaan sendiri, sementara pencatatan stok masih menggunakan buku tulis.
 
 | Kondisi Saat Ini | Kebutuhan | Rencana Solusi Bag-Dapoorbakes |
 |---|---|---|
@@ -49,16 +49,16 @@ Daporbakes memproduksi brownies kukus dan panggang dalam beberapa varian. Berdas
 
 <a id="rencana-fitur"></a>
 
-## 🧺 Rencana Fitur
+## Rencana Fitur
 
-- 🔐 Login atau akses pengguna.
-- 📦 Pengelolaan data bahan baku dan pemasok.
-- ➕ Pencatatan stok masuk dan stok keluar.
-- 📊 Tampilan jumlah stok terkini.
-- 🧾 Riwayat transaksi dan pencarian stok.
-- 🔔 Pengingat stok menipis di dalam aplikasi.
-- 🛒 Rekomendasi pembelian berdasarkan pola produksi mingguan.
-- 📱 Penggunaan yang nyaman melalui HP.
+- Login atau akses pengguna.
+- Pengelolaan data bahan baku dan pemasok.
+- Pencatatan stok masuk dan stok keluar.
+- Tampilan jumlah stok terkini.
+- Riwayat transaksi dan pencarian stok.
+- Pengingat stok menipis di dalam aplikasi.
+- Rekomendasi pembelian berdasarkan pola produksi mingguan.
+- Penggunaan yang nyaman melalui HP.
 
 Rincian fungsi, satuan bahan, batas minimum, dan cara menghitung rekomendasi akan ditetapkan setelah kebutuhan diklarifikasi dan disepakati.
 
@@ -66,7 +66,7 @@ Rincian fungsi, satuan bahan, batas minimum, dan cara menghitung rekomendasi aka
 
 <a id="tech-stack"></a>
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Bagian | Teknologi | Status |
 |---|---|---|
@@ -81,7 +81,7 @@ Rincian fungsi, satuan bahan, batas minimum, dan cara menghitung rekomendasi aka
 
 <a id="tim-pengembang"></a>
 
-## 👥 Tim Pengembang
+## Tim Pengembang
 
 | Anggota | Fokus tanggung jawab |
 |---|---|
@@ -95,13 +95,13 @@ Pembagian ini mengikuti fokus peran pada dokumen perencanaan. Pekerjaan lintas f
 
 <a id="dokumen-proyek"></a>
 
-## 🎒 Dokumen Proyek
+## Dokumen Proyek
 
 | Dokumen | Lokasi | Isi |
 |---|---|---|
-| Project Charter | [`docs/sprint-01/PROJECT_CHARTER.md`](docs/sprint-01/PROJECT_CHARTER.md) | Latar belakang, tujuan, ruang lingkup, risiko, dan deliverable |
-| Stakeholder Register | [`docs/sprint-01/STAKEHOLDER_REGISTER.md`](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pihak terkait, kepentingan, pengaruh, dan usulan komunikasi |
-| Work Breakdown Structure | [`docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md`](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Aktivitas, deliverable, PIC, status bukti, dan dependensi |
+| Project Charter | [docs/sprint-01/PROJECT_CHARTER.md](docs/sprint-01/PROJECT_CHARTER.md) | Latar belakang, tujuan, ruang lingkup, risiko, dan deliverable |
+| Stakeholder Register | [docs/sprint-01/STAKEHOLDER_REGISTER.md](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pihak terkait, kepentingan, pengaruh, dan usulan komunikasi |
+| Work Breakdown Structure | [docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Aktivitas, deliverable, PIC, status bukti, dan dependensi |
 
 Dokumen-dokumen ini disusun untuk perencanaan. Persetujuan pemilik dan dosen pengampu belum dikonfirmasi dalam sumber proyek.
 
@@ -109,9 +109,9 @@ Dokumen-dokumen ini disusun untuk perencanaan. Persetujuan pemilik dan dosen pen
 
 <a id="tahapan-proyek"></a>
 
-## 🗺️ Tahapan Proyek
+## Tahapan Proyek
 
-- [x] **Sprint 1 — Inisiasi dan perencanaan:** menyusun Project Charter, Stakeholder Register, dan WBS.
+- [x] **Sprint 1 - Inisiasi dan perencanaan:** menyusun Project Charter, Stakeholder Register, dan WBS.
 - [ ] **Survei dan analisis kebutuhan:** melengkapi bukti survei serta memvalidasi kebutuhan bersama pemilik.
 - [ ] **Desain sistem:** merancang alur aplikasi, fitur, UI, dan struktur data.
 - [ ] **Pengembangan:** membangun aplikasi menggunakan Next.js setelah kebutuhan dan rancangan disepakati.
@@ -124,58 +124,58 @@ Status daftar ini merupakan gambaran tingkat tinggi. WBS menjadi rujukan untuk r
 
 <a id="alur-kontribusi-github"></a>
 
-## 🕹️ Alur Kontribusi GitHub
+## Alur Kontribusi GitHub
 
 Setiap anggota mengerjakan tugas pada branch masing-masing agar kontribusi dan riwayat commit tetap jelas.
 
 <details>
-<summary><b>🔧 Langkah kerja dengan branch dan Pull Request</b></summary>
+<summary><b> Langkah kerja dengan branch dan Pull Request</b></summary>
 
 <br>
 
 1. **Perbarui branch utama terlebih dahulu:**
-   ```bash
+   bash
    git switch main
    git pull origin main
-   ```
+
 2. **Buat branch untuk pekerjaanmu:**
-   ```bash
+   bash
    git switch -c docs/nama-tugas
-   ```
-   Sesuaikan nama branch dengan jenis tugas dan nama/fitur, misalnya `docs/raisa` atau `feat/stock-entry`.
+
+   Sesuaikan nama branch dengan jenis tugas dan nama/fitur, misalnya docs/raisa atau feat/stock-entry.
 3. **Periksa perubahan, lalu stage file yang memang dikerjakan:**
-   ```bash
+   bash
    git status
    git add path/ke/file
-   ```
+
 4. **Commit dan push branch:**
-   ```bash
+   bash
    git commit -m "docs: jelaskan perubahan"
    git push -u origin docs/nama-tugas
-   ```
-5. **Buat Pull Request menuju `main`** untuk ditinjau tim sebelum perubahan digabungkan.
+
+5. **Buat Pull Request menuju main** untuk ditinjau tim sebelum perubahan digabungkan.
 
 </details>
 
 <details>
-<summary><b>📜 Contekan perintah Git</b></summary>
+<summary><b> Contekan perintah Git</b></summary>
 
 <br>
 
 | Perintah | Fungsi |
 |---|---|
-| `git status` | Melihat branch dan perubahan lokal |
-| `git switch -c nama-branch` | Membuat dan berpindah ke branch baru |
-| `git add path/ke/file` | Menambahkan file tertentu ke staging |
-| `git commit -m "pesan"` | Menyimpan perubahan ke riwayat lokal |
-| `git push -u origin nama-branch` | Mengirim branch ke GitHub |
-| `git pull origin main` | Mengambil pembaruan dari branch utama |
+| git status | Melihat branch dan perubahan lokal |
+| git switch -c nama-branch | Membuat dan berpindah ke branch baru |
+| git add path/ke/file | Menambahkan file tertentu ke staging |
+| git commit -m "pesan" | Menyimpan perubahan ke riwayat lokal |
+| git push -u origin nama-branch | Mengirim branch ke GitHub |
+| git pull origin main | Mengambil pembaruan dari branch utama |
 
 </details>
 
 ---
 
-## 🚧 Menjalankan Aplikasi
+## Menjalankan Aplikasi
 
 Aplikasi belum memiliki kode implementasi maupun konfigurasi dependensi. Setelah proyek Next.js dibuat, bagian ini akan dilengkapi dengan prasyarat, langkah instalasi, konfigurasi environment, dan perintah menjalankan aplikasi.
 
@@ -183,7 +183,7 @@ Aplikasi belum memiliki kode implementasi maupun konfigurasi dependensi. Setelah
 
 <div align="center">
 
-**🧁 BAG-DAPOORBAKES**  
+**BAG-DAPOORBAKES**
 Proyek Manajemen Proyek Perangkat Lunak · 2026
 
 </div>
