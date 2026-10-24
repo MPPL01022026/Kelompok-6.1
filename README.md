@@ -102,6 +102,11 @@ Pembagian ini mengikuti fokus peran pada dokumen perencanaan. Pekerjaan lintas f
 | Project Charter | [docs/sprint-01/PROJECT_CHARTER.md](docs/sprint-01/PROJECT_CHARTER.md) | Latar belakang, tujuan, ruang lingkup, risiko, dan deliverable |
 | Stakeholder Register | [docs/sprint-01/STAKEHOLDER_REGISTER.md](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pihak terkait, kepentingan, pengaruh, dan usulan komunikasi |
 | Work Breakdown Structure | [docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Aktivitas, deliverable, PIC, status bukti, dan dependensi |
+| Sprint 2 — Project Schedule / Gantt Chart | [docs/sprint-02/PROJECT_SCHEDULE_GANTT.md](docs/sprint-02/PROJECT_SCHEDULE_GANTT.md) | Aktivitas, durasi, tanggal, dependensi, Gantt, milestone |
+| Sprint 2 — Resource & Responsibility Plan | [docs/sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md](docs/sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) | Anggota, peran, tanggung jawab, dan kebutuhan sumber daya |
+| Sprint 2 — Effort Estimation | [docs/sprint-02/EFFORT_ESTIMATION_MANDAY.md](docs/sprint-02/EFFORT_ESTIMATION_MANDAY.md) | Estimasi manday per aktivitas dan anggota |
+| Sprint 2 — Project Cost Estimation | [docs/sprint-02/PROJECT_COST_ESTIMATION.md](docs/sprint-02/PROJECT_COST_ESTIMATION.md) | Biaya tenaga kerja, layanan, konektivitas, pertemuan, dan overhead |
+| Sprint 2 — Risk Register | [docs/sprint-02/RISK_REGISTER.md](docs/sprint-02/RISK_REGISTER.md) | Risiko, probabilitas, dampak, mitigasi, pemilik respons |
 
 Dokumen-dokumen ini disusun untuk perencanaan. Persetujuan pemilik dan dosen pengampu belum dikonfirmasi dalam sumber proyek.
 
