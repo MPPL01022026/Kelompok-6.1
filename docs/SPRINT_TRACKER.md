@@ -11,6 +11,11 @@ Status berikut menunjukkan bukti yang tersedia saat dokumentasi ini disiapkan. T
 | Function Point | Perhitungan sumber dan catatan validasi | Tim; PIC perlu disepakati | Angka awal terdokumentasi | [Function Point](sprint-01/FUNCTION_POINT.md) | 80 UFP, ΣFi 42, 85,6 FP; perlu peninjauan |
 | Backlog awal | User story usulan | Tim | Dokumentasi awal tersedia | [Project Backlog](PROJECT_BACKLOG.md) | Prioritas belum disetujui |
 | Repository lokal | Repo dokumentasi Sprint 1 | Tim | Disiapkan lokal | [GitHub Workflow](GITHUB_WORKFLOW.md) | Remote GitHub belum ditentukan; push dilakukan pemilik |
+| Project Schedule / Gantt Chart | Jadwal Sprint 2, dependensi, dan milestone | Dara Anggun Fransisca | Rencana tersedia | [Schedule & Gantt](sprint-02/PROJECT_SCHEDULE_GANTT.md) | Rentang 26 Okt–20 Nov 2026 |
+| Resource & Responsibility Plan | Peran, tanggung jawab, dan kebutuhan sumber daya | Dara Anggun Fransisca | Rencana tersedia | [Resource Plan](sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) | Tiga anggota dan sumber daya proyek |
+| Effort Estimation | Estimasi manday per aktivitas dan anggota | Dara, Lutfiah, Raisa | Rencana tersedia | [Effort Estimation](sprint-02/EFFORT_ESTIMATION_MANDAY.md) | Total 6 MD / 48 jam-orang |
+| Project Cost Estimation | Estimasi biaya dan overhead | Dara Anggun Fransisca | Rencana tersedia | [Cost Estimation](sprint-02/PROJECT_COST_ESTIMATION.md) | Total biaya ekonomi Rp1.320.000 |
+| Risk Register | Risiko, probabilitas, dampak, mitigasi | Dara Anggun Fransisca | Rencana tersedia | [Risk Register](sprint-02/RISK_REGISTER.md) | Sembilan risiko proyek |
 
 ## Log review, feedback, hambatan, tindak lanjut
 
