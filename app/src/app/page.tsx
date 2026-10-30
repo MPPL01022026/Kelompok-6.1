@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDownLeft, ArrowDownRight, ArrowLeftRight, ArrowUpRight, Bell,
   Check, ChevronDown, CircleHelp, Download, History, Leaf,
@@ -115,6 +115,8 @@ function IngredientDialog({ initial, onClose, onSave }: {
 function movementLabel(type: MovementType) { return type === "in" ? "Masuk" : type === "out" ? "Keluar" : "Penyesuaian"; }
 
 export default function Home() {
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const railRef = useRef<HTMLElement>(null);
   const [state, setState] = useState<InventoryState>(INITIAL_STATE);
   const [ready, setReady] = useState(false);
   const [view, setView] = useState<View>("overview");
@@ -130,6 +132,18 @@ export default function Home() {
   useEffect(() => { if (ready) { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch { setToast("Penyimpanan browser penuh. Ekspor riwayat sebagai cadangan."); } } }, [state, ready]);
   useEffect(() => { if (!toast) return; const timer = window.setTimeout(() => setToast(""), 3000); return () => window.clearTimeout(timer); }, [toast]);
   useEffect(() => { if (!dialog) return; const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setDialog(null); }; window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey); }, [dialog]);
+  useEffect(() => {
+    if (!mobileNav) return;
+    railRef.current?.querySelector<HTMLButtonElement>(".rail-link")?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileNav(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileNav]);
   useEffect(() => { const onSlash = (event: KeyboardEvent) => { const target = event.target as HTMLElement; if (event.key === "/" && !dialog && !["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) && !target.isContentEditable) { event.preventDefault(); document.querySelector<HTMLInputElement>(".search-control input")?.focus(); } }; window.addEventListener("keydown", onSlash); return () => window.removeEventListener("keydown", onSlash); }, [dialog]);
 
   const movements = useMemo(() => [...state.movements].sort((a, b) => b.createdAt.localeCompare(a.createdAt)), [state.movements]);
@@ -173,12 +187,19 @@ export default function Home() {
     const blob = new Blob(["\ufeff", lines.map((line) => line.map(safeCell).join(",")).join("\r\n")], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href = url; link.download = "riwayat-stok-daporbakes.csv"; link.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000); notify("CSV riwayat berhasil diunduh.");
   };
-  const changeView = (next: View) => { setView(next); setMobileNav(false); setQuery(""); };
+  const changeView = (next: View) => {
+    setView(next);
+    setQuery("");
+    if (mobileNav) {
+      setMobileNav(false);
+      menuButtonRef.current?.focus();
+    }
+  };
   const openEdit = (ingredient: Ingredient) => { setEditing(ingredient); setDialog("edit"); };
   const startMovement = (ingredient?: Ingredient) => { setEditing(ingredient); setDialog("movement"); };
 
   return <div className="workspace">
-    <aside className={`rail ${mobileNav ? "rail-open" : ""}`}>
+    <aside id="stock-navigation" ref={railRef} className={`rail ${mobileNav ? "rail-open" : ""}`}>
       <a className="wordmark" href="#overview" onClick={() => changeView("overview")}><span className="wordmark-icon"><Wheat size={20} /></span><span><strong>Dapor<span>bakes</span></strong><small>STOCKBOOK</small></span></a>
       <div className="rail-section">RUANG KERJA</div><div className="bakery-switch"><span className="bakery-monogram">D</span><span><strong>Daporbakes</strong><small>Dapur brownies</small></span><ChevronDown size={15} /></div>
       <div className="rail-section nav-label">CATATAN</div><nav className="rail-nav" aria-label="Navigasi stok">
@@ -188,9 +209,9 @@ export default function Home() {
       </nav>
       <div className="rail-bottom"><div className="stock-note"><span className="note-stamp"><Leaf size={14} /></span><p>Angka awal adalah contoh. Cocokkan dengan isi rak sebelum dipakai mencatat belanja.</p><button onClick={() => changeView("ingredients")}>Periksa bahan <span>↗</span></button></div><div className="account"><span className="account-avatar">D</span><span><strong>Dara Anggun</strong><small>Pemilik usaha</small></span><button aria-label="Informasi akun" onClick={() => notify("Mode lokal · data hanya di browser ini.")}><CircleHelp size={16} /></button></div></div>
     </aside>
-    {mobileNav && <button className="scrim" aria-label="Tutup menu" onClick={() => setMobileNav(false)} />}
+    {mobileNav && <button className="scrim" aria-label="Tutup menu navigasi" onClick={() => { setMobileNav(false); menuButtonRef.current?.focus(); }} />}
     <main className="main-column">
-      <header className="masthead"><button className="icon-button menu-toggle" aria-label="Buka menu" onClick={() => setMobileNav(true)}><Menu size={20} /></button><div className="crumb">Dapur <span>/</span> <strong>{view === "overview" ? "Ringkasan" : view === "ingredients" ? "Bahan baku" : "Buku pergerakan"}</strong></div><div className="masthead-right"><span className="today">{today}</span><button className={`reminder ${lowStock.length ? "has-alert" : ""}`} aria-label="Lihat pengingat stok" onClick={() => { changeView("ingredients"); setGroup("Semua kelompok"); }}><Bell size={17} />{lowStock.length > 0 && <i />}</button><span className="head-rule" /><span className="local-status"><i /> Tersimpan di perangkat ini</span></div></header>
+      <header className="masthead"><button ref={menuButtonRef} className="icon-button menu-toggle" aria-label="Buka menu navigasi" aria-expanded={mobileNav} aria-controls="stock-navigation" onClick={() => setMobileNav(true)}><Menu size={20} /></button><div className="crumb">Dapur <span>/</span> <strong>{view === "overview" ? "Ringkasan" : view === "ingredients" ? "Bahan baku" : "Buku pergerakan"}</strong></div><div className="masthead-right"><span className="today">{today}</span><button className={`reminder ${lowStock.length ? "has-alert" : ""}`} aria-label="Lihat pengingat stok" onClick={() => { changeView("ingredients"); setGroup("Semua kelompok"); }}><Bell size={17} />{lowStock.length > 0 && <i />}</button><span className="head-rule" /><span className="local-status"><i /> Tersimpan di perangkat ini</span></div></header>
       <div className="page">
         <section className="page-title"><div><span className="kicker"><span className="kicker-line" />CATATAN DAPUR <span>·</span> {today ? today.toLocaleUpperCase("id-ID") : ""}</span><h1>{view === "overview" ? "Persediaan hari ini" : view === "ingredients" ? "Bahan baku" : "Buku pergerakan"}</h1><p>{view === "overview" ? "Yang ada di rak, yang mulai menipis, dan apa saja yang berubah." : view === "ingredients" ? "Satuan dan ambang untuk tiap bahan yang dipakai." : "Jejak barang masuk, pemakaian, dan hitung ulang."}</p></div><div className="title-actions">{view === "ingredients" ? <button className="button primary" onClick={() => setDialog("ingredient")}><Plus size={16} />Tambah bahan</button> : view === "history" ? <><button className="button secondary" onClick={exportCsv}><Download size={15} />Unduh CSV</button><button className="button primary" onClick={() => startMovement()}><Plus size={16} />Catat stok</button></> : <button className="button primary" onClick={() => startMovement()}><Plus size={16} />Catat pergerakan</button>}</div></section>
 
