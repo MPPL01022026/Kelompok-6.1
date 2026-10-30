@@ -1,6 +1,6 @@
-# MVP Inventaris Bag-Dapoorbakes
+# Prototipe stok bahan Daporbakes
 
-Aplikasi ini adalah prototipe buku stok bahan baku untuk Daporbakes, dikerjakan pada Sprint 3. Data awal di aplikasi merupakan contoh dan harus dicocokkan dengan stok fisik sebelum digunakan.
+Prototipe ini membantu mencatat bahan baku, perubahan stok, dan hasil hitung fisik. Data awal hanya contoh; cocokkan dengan stok sebenarnya sebelum digunakan.
 
 ## Menjalankan aplikasi
 
@@ -25,15 +25,15 @@ Hentikan server lokal dengan `Ctrl+C`.
 
 ## Alur penggunaan
 
-1. Buka **Bahan baku** dan cocokkan saldo awal serta batas minimum bahan contoh dengan hitungan fisik.
-2. Tambahkan bahan dengan nama, satuan, kelompok, saldo awal, dan batas minimum. Gunakan satuan yang sama setiap kali mencatat bahan tersebut.
-3. Catat perubahan stok sebagai **Masuk**, **Keluar**, atau **Cocokkan**. Setiap catatan memerlukan keterangan.
-4. Untuk mencocokkan stok, masukkan jumlah yang benar-benar dihitung. Aplikasi mencatat selisih terhadap saldo berjalan. Stok keluar yang melebihi saldo ditolak.
-5. Gunakan **Buku pergerakan** untuk mencari catatan, memilih rentang waktu, dan mengunduh hasil yang terlihat sebagai CSV.
+1. Buka **Daftar bahan**, lalu cocokkan stok awal dan batas minimum bahan contoh dengan hasil hitung fisik.
+2. Tambahkan bahan dengan nama, satuan, kelompok, stok awal, dan batas minimum. Gunakan satuan yang sama setiap kali mencatat bahan tersebut.
+3. Pilih **Catat perubahan** untuk merekam **Stok masuk**, **Stok keluar**, atau **Sesuaikan stok**. Tambahkan catatan untuk menjelaskan setiap perubahan.
+4. Saat menyesuaikan stok, masukkan jumlah hasil hitung fisik. Aplikasi mencatat selisih dari stok sebelumnya. Jumlah pemakaian yang melebihi stok akan ditolak.
+5. Buka **Riwayat stok** untuk mencari catatan, memilih rentang waktu, dan mengunduh hasil yang tampil sebagai CSV.
 
 ## Penyimpanan dan batasan
 
-Data disimpan di `localStorage` pada browser dan profil perangkat yang sedang digunakan. Data tidak tersinkron ke anggota tim atau perangkat lain, dan belum ada akun, database, atau cadangan cloud. Ekspor CSV hanya memuat pergerakan yang sedang terlihat; ekspor itu bukan cadangan lengkap daftar bahan. Jangan gunakan prototipe ini sebagai satu-satunya catatan stok operasional.
+Data disimpan di `localStorage` pada browser dan perangkat yang sedang digunakan. Data tidak tersinkron ke perangkat lain; prototipe ini belum memiliki akun, database bersama, atau cadangan cloud. Ekspor CSV hanya memuat perubahan stok yang sedang tampil, bukan cadangan lengkap daftar bahan. Jangan gunakan prototipe ini sebagai satu-satunya catatan stok operasional.
 
 Untuk memulai ulang data contoh pada browser, hapus data situs untuk `localhost:3000` melalui pengaturan browser. Tindakan ini menghapus data aplikasi lokal pada profil tersebut.
 
