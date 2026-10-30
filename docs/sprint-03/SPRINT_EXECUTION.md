@@ -2,11 +2,13 @@
 
 Dokumen ini merangkum bukti pekerjaan pengembangan yang tersedia di repository pada 30 Oktober 2026. Sprint 3 berfokus pada pembuatan MVP dan penyempurnaan pengalaman penggunaan. Catatan berikut merujuk pada riwayat GitHub dan dokumen proyek; ini bukan notulen rapat.
 
+Laporan utama tersedia dalam [format PDF](LAPORAN_PELAKSANAAN_SPRINT_3.pdf) dan [format Markdown](LAPORAN_PELAKSANAAN_SPRINT_3.md). Wireframe dan tangkapan layar tiap halaman dalam rasio 16:9 ditampilkan di [README proyek](../../README.md#wireframe-tiap-halaman).
+
 ## Pembagian tugas dan hasil
 
 | Anggota | Pekerjaan | Bukti commit | Pull request |
 |---|---|---|---|
-| Lutfiah Naysilla Azzahra | Membangun fondasi dan MVP inventaris: halaman aplikasi, data bahan/pergerakan, serta pencatatan stok. | [`a62bd1e`](https://github.com/MPPL01022026/Kelompok-6.1/commit/a62bd1e) — `fitur(aplikasi): tambahkan MVP inventaris` | [PR #11](https://github.com/MPPL01022026/Kelompok-6.1/pull/11) — digabung ke `main` |
+| Lutfiah Naysilla Azzahra | Membangun fondasi dan MVP inventaris: halaman aplikasi, daftar bahan, dan pencatatan perubahan stok. | [`a62bd1e`](https://github.com/MPPL01022026/Kelompok-6.1/commit/a62bd1e) — `fitur(aplikasi): tambahkan MVP inventaris` | [PR #11](https://github.com/MPPL01022026/Kelompok-6.1/pull/11) — digabung ke `main` |
 | Dara Anggun Fransisca | Menyempurnakan antarmuka buku stok responsif dan menangani temuan UI/aksesibilitas yang tercatat. | [`1671b14`](https://github.com/MPPL01022026/Kelompok-6.1/commit/1671b14) — `fitur(ui): sempurnakan tampilan buku stok responsif` | [PR #12](https://github.com/MPPL01022026/Kelompok-6.1/pull/12) — digabung ke `main` |
 | Raisa Nurfaiza | Menulis panduan menjalankan aplikasi serta checklist QA manual. | [`07f6f39`](https://github.com/MPPL01022026/Kelompok-6.1/commit/07f6f39) — `docs(aplikasi): dokumentasikan cara menjalankan aplikasi dan QA` | [PR #13](https://github.com/MPPL01022026/Kelompok-6.1/pull/13) — digabung ke `main` |
 
@@ -14,13 +16,13 @@ Setiap PR menggabungkan satu commit fitur/dokumentasi dari branch anggota. Riway
 
 ## Progres prototipe
 
-MVP berjalan secara lokal dan menyediakan tiga halaman utama: Ringkasan, Bahan baku, dan Buku pergerakan. Pengguna dapat mengelola daftar bahan, mencatat stok masuk/keluar dan pencocokan, mencari atau menyaring catatan, serta mengunduh hasil yang terlihat sebagai CSV. Data contoh masih perlu dicocokkan dengan stok fisik.
+MVP berjalan secara lokal dan menyediakan tiga halaman utama: Ringkasan, Daftar bahan, dan Riwayat stok. Pengguna dapat mengelola bahan, mencatat stok masuk dan pemakaian, menyesuaikan stok dengan hasil hitung fisik, mencari catatan, serta mengunduh hasil yang tampil sebagai CSV. Data contoh masih perlu dicocokkan dengan stok fisik.
 
 ![Ringkasan persediaan](screenshots/01-ringkasan.png)
 
 ![Daftar bahan baku](screenshots/02-bahan-baku.png)
 
-![Buku pergerakan persediaan](screenshots/03-buku-pergerakan.png)
+![Riwayat stok](screenshots/03-riwayat-stok.png)
 
 ## Pemeriksaan dan hasil
 
@@ -34,6 +36,8 @@ Urutan perubahan yang dapat diverifikasi dari repository adalah PR #11 (MVP) →
 
 Repository yang tersedia tidak memuat tanggal/peserta rapat, notulen, atau keputusan rapat Sprint 3 yang dapat diverifikasi. Lengkapi catatan di bawah setelah rapat atau koordinasi benar-benar dilakukan; jangan mengisi berdasarkan perkiraan.
 
+Foto dokumentasi rapat dan koordinasi telah ditambahkan pada [laporan Sprint 3](LAPORAN_PELAKSANAAN_SPRINT_3.md#9-dokumentasi-rapat-dan-koordinasi). Foto menunjukkan aktivitas tim dengan perangkat kerja, tetapi tidak memuat metadata tanggal, agenda, daftar hadir, atau keputusan rapat. Karena itu, foto tidak digunakan untuk mengarang isi notulen.
+
 | Tanggal dan waktu | Peserta | Pokok bahasan | Keputusan | Tindak lanjut dan PIC |
 |---|---|---|---|---|
 | Belum dicatat | Belum dicatat | Belum dicatat | Belum dicatat | Belum dicatat |
@@ -42,5 +46,5 @@ Repository yang tersedia tidak memuat tanggal/peserta rapat, notulen, atau keput
 
 1. Jalankan checklist QA pada versi yang akan direview dan catat perangkat, browser, tanggal, hasil, serta bukti.
 2. Uji tampilan dan navigasi keyboard pada ukuran ponsel serta perangkat nyata.
-3. Konfirmasi saldo awal dan batas minimum dengan pemilik Daporbakes sebelum memakai data untuk operasional.
+3. Konfirmasi stok awal dan batas minimum dengan pemilik Daporbakes sebelum memakai data untuk operasional.
 4. Tentukan kebutuhan akun, penyimpanan bersama, dan pencadangan sebelum mengembangkan di luar prototipe lokal.
