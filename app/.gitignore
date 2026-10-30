@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.next*/
+out/
+build/
+*.tsbuildinfo
+.env*
+!.env.example
+# Device-only development files. Keep application source in Git; keep local
+# runtime state, scratch data, and per-device overrides out of commits.
+.local/
+data/
+*.local
+*.local.*
