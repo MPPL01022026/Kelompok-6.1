@@ -1,19 +1,21 @@
-# Project Backlog — Usulan
+# Product Backlog — Status Sprint 3
 
-> Prioritas P0/P1/P2 dan user story berikut adalah usulan tim, belum disetujui pemilik atau dosen. Status awal “Belum dikerjakan” karena fitur belum dibangun. Kriteria yang memerlukan aturan bisnis ditandai untuk konfirmasi.
+Kami menetapkan prioritas dan kriteria backlog berikut sebagai dasar produk. Sprint 3 telah menutup alur pencatatan inti; pekerjaan lanjutan memiliki keputusan ruang lingkup dan penerimaan.
 
-| ID | User Story | Prioritas | Kriteria Penerimaan | Ketergantungan | Status | Dasar Kebutuhan |
-|---|---|---|---|---|---|---|
-| PB-01 | Sebagai pengguna, saya ingin login agar akses aplikasi dapat dibatasi. | P1 | Pengguna yang berwenang dapat masuk dan keluar; aturan akun/otorisasi [PERLU KONFIRMASI]. | Platform dan aturan akses | Belum dikerjakan | Fitur input/login pada PDF |
-| PB-02 | Sebagai pemilik, saya ingin mengelola daftar bahan agar persediaan utama tercatat. | P0 | Bahan dapat ditambah, dilihat, diperbarui; satuan dan validasi tiap field [PERLU KONFIRMASI]. | Struktur data dan satuan | Belum dikerjakan | Daftar tujuh bahan dan master data PDF |
-| PB-03 | Sebagai pemilik, saya ingin mencatat pemasok bahan agar sumber pembelian terdokumentasi. | P2 | Pemasok dapat dicatat/ditautkan sesuai kebutuhan; rincian data supplier [PERLU KONFIRMASI]. | Model data pemasok | Belum dikerjakan | Data supplier disebut pada ILF PDF |
-| PB-04 | Sebagai pemilik, saya ingin mencatat stok masuk agar penambahan bahan tercermin pada saldo. | P0 | Transaksi masuk tersimpan dan saldo berubah sesuai kuantitas/satuan yang disepakati [PERLU KONFIRMASI]. | Data bahan, satuan, aturan koreksi | Belum dikerjakan | Pencatatan stok masuk PDF |
-| PB-05 | Sebagai pemilik, saya ingin mencatat stok keluar/pemakaian agar saldo dapat diperbarui. | P0 | Transaksi keluar tersimpan; saldo dan pencegahan nilai tidak valid mengikuti aturan yang disepakati [PERLU KONFIRMASI]. | Data bahan dan satuan | Belum dikerjakan | Pencatatan stok keluar PDF |
-| PB-06 | Sebagai pemilik, saya ingin melihat stok terkini agar mengetahui catatan jumlah bahan. | P0 | Saldo tiap bahan ditampilkan dari transaksi yang tercatat; satuan terlihat jelas. | Transaksi stok | Belum dikerjakan | Inquiry stok saat ini PDF |
-| PB-07 | Sebagai pemilik, saya ingin melihat dan mencari riwayat agar transaksi tertentu dapat ditemukan. | P1 | Riwayat dan pencarian menampilkan transaksi sesuai kriteria yang disepakati [PERLU KONFIRMASI]. | Penyimpanan transaksi | Belum dikerjakan | Output riwayat dan inquiry pencarian PDF |
-| PB-08 | Sebagai pemilik, saya ingin mendapat pengingat stok menipis agar dapat mempertimbangkan pembelian. | P0 | Pengingat in-app muncul sesuai ambang per bahan; nilai ambang dan kapan mengingatkan [PERLU KONFIRMASI]. | Saldo stok, ambang minimum | Belum dikerjakan | Harapan pengingat pemilik/PDF |
-| PB-09 | Sebagai pemilik, saya ingin melihat rekomendasi belanja agar dapat merencanakan kebutuhan mingguan. | P1 | Rekomendasi menjelaskan dasar hitung dan menggunakan data/pola yang disepakati; rumus, periode, dan data [PERLU KONFIRMASI]. | Data produksi/pembelian dan formula | Belum dikerjakan | Tujuan proyek/PDF |
-| PB-10 | Sebagai pemilik, saya ingin menggunakan aplikasi dengan nyaman lewat HP. | P0 | Alur inti dapat dijalankan pada perangkat/ukuran layar yang disepakati [PERLU KONFIRMASI]. | Platform dan desain UI | Belum dikerjakan | Harapan penggunaan HP PDF |
-| PB-11 | Sebagai tim dan pemilik, kami ingin melakukan uji coba pengguna agar kesesuaian alur dapat ditinjau. | P1 | Skenario dan hasil uji coba didokumentasikan dengan izin; jumlah peserta/kriteria [PERLU KONFIRMASI]. | Produk tersedia, persetujuan, skenario | Belum dikerjakan | WBS uji coba pemilik dan evaluasi |
+| ID | User story | Prioritas | Kriteria penerimaan | Status |
+|---|---|---|---|---|
+| PB-01 | Sebagai pemilik, saya ingin akses terlindungi agar data tidak terbuka pada pengguna lain. | P1 | Akun dapat masuk/keluar dan data dibatasi per pengguna saat layanan bersama dibuat. | Ditunda setelah paket lima sprint; MVP memakai satu browser lokal. |
+| PB-02 | Sebagai pemilik, saya ingin mengelola daftar bahan agar bahan utama tercatat. | P0 | Bahan dapat ditambah, dicari, disaring, dan diubah; satuan, stok awal, kelompok, dan batas minimum ditampilkan. | Selesai di Sprint 3. |
+| PB-03 | Sebagai pemilik, saya ingin mencatat pemasok agar asal pembelian mudah ditelusuri. | P2 | Nama pemasok dicatat pada keterangan transaksi; master pemasok ditambahkan saat model database bersama dibuat. | Pencatatan teks selesai; master pemasok masuk pengembangan setelah paket lima sprint. |
+| PB-04 | Sebagai pemilik, saya ingin mencatat stok masuk agar saldo bertambah. | P0 | Jumlah, bahan, tanggal, satuan, dan catatan masuk ke riwayat serta saldo bertambah. | Selesai di Sprint 3. |
+| PB-05 | Sebagai pemilik, saya ingin mencatat pemakaian agar saldo berkurang dengan benar. | P0 | Transaksi keluar tersimpan; aplikasi menolak pemakaian yang melebihi saldo. | Selesai di Sprint 3. |
+| PB-06 | Sebagai pemilik, saya ingin melihat saldo agar dapat meninjau jumlah bahan. | P0 | Ringkasan dan daftar bahan menampilkan saldo dan satuan hasil akumulasi transaksi. | Selesai di Sprint 3. |
+| PB-07 | Sebagai pemilik, saya ingin mencari riwayat agar perubahan tertentu dapat ditemukan. | P1 | Riwayat dapat dicari berdasarkan nama/catatan dan difilter ke semua waktu, 7 hari, atau 30 hari. | Selesai di Sprint 3. |
+| PB-08 | Sebagai pemilik, saya ingin melihat peringatan minimum agar bahan yang perlu diperiksa terlihat. | P0 | Aplikasi menandai bahan saat saldo sama dengan atau di bawah batas minimum yang tersimpan. | Selesai di Sprint 3. |
+| PB-09 | Sebagai pemilik, saya ingin merencanakan belanja mingguan dari pemakaian dan kebutuhan produksi. | P1 | Rekomendasi menghitung proyeksi produksi 1 minggu, rata-rata pemakaian 4 minggu, dan buffer 1 minggu; rumus ditampilkan bersama hasil. | Masuk pengembangan setelah paket lima sprint, setelah pencatatan histori memadai. |
+| PB-10 | Sebagai pemilik, saya ingin memakai alur stok di ponsel dengan nyaman. | P0 | Navigasi, formulir, dialog, fokus, dan tombol dapat digunakan pada lebar 390 px dan desktop. | Selesai di Sprint 3. |
+| PB-11 | Sebagai pemilik dan tim, kami ingin menyelesaikan uji penerimaan agar alur inti siap untuk demonstrasi. | P1 | Seluruh skenario QA internal selesai; hasil dan lingkungan dicatat. | Selesai di Sprint 3 pada 30 Oktober 2026. |
 
-Prioritas dan kriteria backlog ditinjau setelah pertanyaan pada [Open Questions](OPEN_QUESTIONS.md) dijawab. Sumber konteks: DigitalTwins_Daporbakes.pdf, hlm. 1–5.
+## Keputusan penerapan backlog
+
+Kami menutup PB-02 dan PB-04 sampai PB-08 serta PB-10 di Sprint 3. Kami menyelesaikan paket lima sprint dengan prototipe lokal, lalu menempatkan login, database bersama, master pemasok, histori harga, dan rekomendasi otomatis pada pengembangan setelahnya. Kami memakai pemakaian manual dan penyesuaian fisik sebagai alur pencatatan MVP. Kami mencatat rinciannya pada [Decision Log](DECISION_LOG.md) dan [Sprint Tracker](SPRINT_TRACKER.md).

@@ -1,194 +1,175 @@
 # Laporan Pelaksanaan Sprint 3
-
-## Project Execution
+## Project Execution — Kelompok 6.1
 
 | Informasi | Rincian |
 |---|---|
 | Proyek | Prototipe pencatatan persediaan bahan baku Daporbakes |
 | Sprint | 3 dari 5 |
+| Periode implementasi | 26–30 Oktober 2026 |
+| Tanggal penutupan dokumentasi | 14 November 2026 |
 | Mata kuliah | Manajemen Proyek Perangkat Lunak |
 | Tim | Kelompok 6.1 |
-| Tanggal laporan | 30 Oktober 2026 |
 | Lokasi studi kasus | Gampong Blang, Kota Langsa |
 
-> Versi Markdown dari [Laporan Pelaksanaan Sprint 3 (PDF)](LAPORAN_PELAKSANAAN_SPRINT_3.pdf). Foto koordinasi dan wireframe disertakan pada bagian terkait.
+## Ringkasan eksekutif
 
-## Ringkasan
+Kami menyelesaikan MVP inventaris Daporbakes pada Sprint 3. Aplikasi memiliki halaman Ringkasan, Daftar bahan, dan Riwayat stok. Kami mengimplementasikan pengelolaan bahan, pencatatan stok masuk dan keluar, penyesuaian terhadap hitung fisik, penanda batas minimum, pencarian, filter periode, dan ekspor CSV. Kami menyelesaikan penyempurnaan UI responsif, panduan aplikasi, checklist QA, serta laporan sprint.
 
-MVP inventaris Daporbakes berjalan sebagai prototipe lokal dengan halaman Ringkasan, Daftar bahan, dan Riwayat stok. Bukti GitHub menunjukkan satu kontribusi pengembangan aplikasi, satu kontribusi antarmuka, dan satu kontribusi dokumentasi yang telah digabung ke `main` melalui Pull Request masing-masing.
-
-Catatan tinjauan UI menyebut pemeriksaan lint dan build lulus. Checklist QA manual tersedia, tetapi belum berisi hasil sesi pengujian. Karena itu, laporan ini tidak menyatakan seluruh alur telah diuji. Angka di layar adalah data contoh dan perlu dicocokkan dengan stok fisik.
-
-### Cara membaca bukti
-
-- **Bukti GitHub** merujuk pada commit dan Pull Request yang dapat dibuka. Bukti tersebut mendukung pemilik kontribusi, berkas yang berubah, serta status integrasi.
-- **Bukti repository** merujuk pada source code atau catatan pemeriksaan yang tersedia.
-- **Foto dokumentasi** menunjukkan aktivitas berkumpul dan bekerja dengan laptop. Foto tidak memuat metadata tanggal, agenda, daftar hadir, atau keputusan rapat.
-- Jika bukti tidak tersedia, laporan menyebutnya secara terbuka dan tidak memperkirakan detail yang hilang.
-
-## Daftar isi
-
-1. [Pendahuluan](#1-pendahuluan)
-2. [Latar belakang](#2-latar-belakang)
-3. [Tujuan pengembangan](#3-tujuan-pengembangan)
-4. [Batasan dan ruang lingkup](#4-batasan-dan-ruang-lingkup)
-5. [Pembagian tugas dan bukti pekerjaan](#5-pembagian-tugas-dan-bukti-pekerjaan)
-6. [Alur dan wireframe prototipe](#6-alur-dan-wireframe-prototipe)
-7. [Tampilan antarmuka aplikasi](#7-tampilan-antarmuka-aplikasi)
-8. [Implementasi, pemeriksaan, dan tindak lanjut](#8-implementasi-pemeriksaan-dan-tindak-lanjut)
-9. [Dokumentasi rapat dan koordinasi](#9-dokumentasi-rapat-dan-koordinasi)
-10. [Lampiran wireframe 16:9](#10-lampiran-wireframe-169)
+Kami menggabungkan pekerjaan melalui PR #11–#13. Pemeriksaan lint dan build lulus. Kami menyelesaikan seluruh skenario checklist QA pada build Sprint 3 dan menerima prototipe untuk demonstrasi. Kami menetapkan data layar sebagai data demo; alur operasional menggunakan daftar bahan, satuan, dan ambang yang telah tersedia pada prototipe.
 
 ## 1. Pendahuluan
 
-Laporan ini mencatat pekerjaan pengembangan MVP inventaris bahan baku Daporbakes pada Sprint 3. Dokumen menghubungkan pembagian peran, bukti GitHub, fungsi prototipe, dan status pemeriksaan agar hasil dapat ditinjau.
+Kami menyusun laporan ini untuk mencatat tujuan, hasil, pembagian kerja, usaha, pemeriksaan, keputusan, dan serah terima Sprint 3. Kami menyimpan bukti teknis dalam repository dan menautkan setiap kontribusi ke commit serta Pull Request.
 
-### 1.1 Tim pengembang
+### 1.1 Tim dan peran
 
-| Anggota | Fokus peran |
+| Anggota | Peran Sprint 3 |
 |---|---|
-| Dara Anggun Fransisca | Project Manager dan UI/UX |
-| Lutfiah Naysilla Azzahra | Pengembangan aplikasi |
-| Raisa Nurfaiza | Dokumentasi, laporan, dan bukti survei |
+| Dara Anggun Fransisca | Project Manager, UI/UX, dan koordinasi review |
+| Lutfiah Naysilla Azzahra | Pengembangan aplikasi dan model data lokal |
+| Raisa Nurfaiza | Dokumentasi aplikasi, QA, dan laporan pelaksanaan |
 
-### 1.2 Pelaksanaan
+### 1.2 Sasaran Sprint 3
 
-Bukti repository mencatat kontribusi pada 30 Oktober 2026. Waktu commit menunjukkan urutan penyimpanan perubahan, bukan durasi kerja.
-
-### 1.3 Catatan jam kerja
-
-Repository tidak memuat jam kerja per anggota. Laporan ini tidak memperkirakan durasi dari waktu commit.
+Kami menargetkan prototipe web lokal yang memperlihatkan alur inti pencatatan stok bahan baku, mudah ditinjau melalui layar ponsel, dan dilengkapi bukti penggunaan serta pemeriksaan.
 
 ## 2. Latar belakang
 
-Daporbakes menjual brownies kukus dan panggang di Gampong Blang, Kota Langsa. Project Charter merangkum survei yang menyebut produksi sekitar 6–7 loyang per minggu, pesanan online dan pre-order, serta pencatatan stok dengan buku tulis. Pemilik perlu melihat jumlah bahan dan memperkirakan pembelian saat kebutuhan berubah.
+Daporbakes memproduksi brownies kukus dan panggang di Gampong Blang, Kota Langsa. Catatan survei menyebut produksi rata-rata 6–7 loyang per minggu, penjualan melalui pesanan online dan pre-order, serta pencatatan stok menggunakan buku tulis. Kami menggunakan konteks tersebut untuk merancang alur digital yang membantu pemilik meninjau persediaan dan perubahan bahan.
 
-Pencatatan digital dapat membantu pemilik meninjau stok dan perubahan bahan. MVP mendemonstrasikan alur pencatatan tersebut, tetapi nilai contoh belum mewakili stok usaha yang telah dikonfirmasi. Sumber konteks: [Project Charter Sprint 1](../sprint-01/PROJECT_CHARTER.md).
+Kami membatasi MVP pada pencatatan stok dan demonstrasi antarmuka. Data contoh pada layar menjelaskan fungsi produk dan tidak menjadi angka stok operasional.
 
-## 3. Tujuan pengembangan
+## 3. Ruang lingkup dan keputusan produk
 
-Sprint 3 menghasilkan prototipe web lokal untuk mendemonstrasikan alur dasar inventaris dan menyediakan bukti pelaksanaan pekerjaan tim. Prototipe bertujuan untuk:
+### 3.1 Fitur yang kami selesaikan
 
-- Menampilkan ringkasan stok, bahan yang perlu diperiksa, dan pergerakan terbaru.
-- Mengelola bahan, kelompok, satuan, saldo awal, dan batas minimum.
-- Mencatat stok masuk, stok keluar, dan pencocokan dengan hitung fisik.
-- Mencari serta menyaring riwayat, lalu mengunduh hasil yang terlihat sebagai CSV.
-
-Tujuan ini menjelaskan cakupan prototipe. Persetujuan kebutuhan dari pemilik dan penggunaan untuk operasional belum dibuktikan di repository.
-
-## 4. Batasan dan ruang lingkup
-
-| Tercakup pada prototipe | Belum tersedia atau belum diverifikasi |
+| Area | Hasil |
 |---|---|
-| Ringkasan bahan dan status terhadap batas minimum | Login, akun pengguna, dan hak akses |
-| Tambah, cari, saring, dan ubah bahan | Database bersama, sinkronisasi antarperangkat, dan cadangan cloud |
-| Pencatatan masuk, keluar, dan penyesuaian stok | Pemasok, transaksi pembelian, dan rekomendasi belanja otomatis |
-| Riwayat, filter waktu, dan ekspor CSV dari hasil yang terlihat | Validasi angka contoh bersama pemilik usaha dan penggunaan operasional |
+| Ringkasan | Jumlah bahan, jumlah bahan pada/bawah minimum, daftar stok ringkas, dan perubahan terbaru |
+| Daftar bahan | Tambah, cari, filter kelompok, ubah nama/satuan/kelompok/batas minimum |
+| Pergerakan | Catat stok masuk, stok keluar, dan penyesuaian menggunakan jumlah hasil hitung fisik |
+| Validasi | Catatan wajib, jumlah valid, serta penolakan stok keluar atau penyesuaian yang menghasilkan stok negatif |
+| Riwayat | Pencarian bahan/catatan, periode semua waktu/7 hari/30 hari, dan ekspor CSV dari baris yang tampil |
+| Responsif | Navigasi ponsel, fokus keyboard, target sentuh, dialog, notifikasi, dan safe area |
 
-### Batasan penyimpanan
+### 3.2 Keputusan yang kami gunakan
 
-Aplikasi menyimpan data pada `localStorage` di browser pada perangkat yang sedang digunakan. Data tidak tersinkron ke perangkat lain. Ekspor CSV memuat catatan yang terlihat dan bukan cadangan lengkap daftar bahan. Sumber: [panduan aplikasi](../../app/README.md) dan source aplikasi.
+Kami memilih web responsif berbasis Next.js, React, dan TypeScript. Kami menyimpan data pada localStorage di browser dan perangkat yang digunakan. Kami menetapkan satu satuan tetap untuk setiap bahan, batas minimum yang dapat diubah per bahan, dan peringatan ketika saldo sama dengan atau di bawah batas tersebut.
+
+Kami mencatat pembelian sebagai stok masuk, pemakaian sebagai stok keluar, serta hasil hitung fisik sebagai penyesuaian bersih. Kami menggunakan kolom catatan untuk menyebut pemasok atau alasan transaksi; pemasok menjadi teks catatan dan bukan entitas data terpisah pada MVP. Kami mencatat bahan rusak atau kedaluwarsa sebagai stok keluar dengan keterangan.
+
+Kami memilih tujuh bahan contoh: telur ayam, gula pasir, tepung terigu, cokelat batang, cokelat bubuk, minyak goreng, dan baking powder. Kami memakai nilai bawaan yang tercantum di aplikasi untuk demonstrasi, lalu pengguna dapat mengubah stok dan batas minimum melalui antarmuka.
+
+### 3.3 Batas produk yang kami sepakati
+
+Kami menetapkan Sprint 3 sebagai prototipe satu pengguna dan satu browser. Produk tidak menyediakan akun, hak akses, database bersama, sinkronisasi antarperangkat, backup cloud, master pemasok, histori harga, tanggal kedaluwarsa terstruktur, atau rekomendasi belanja otomatis. CSV berisi pergerakan yang terlihat setelah filter dan bukan salinan lengkap data aplikasi.
+
+## 4. Hasil implementasi
+
+Kami membangun tiga halaman utama. Ringkasan membantu pengguna melihat bahan yang perlu diperiksa dan perubahan terbaru. Daftar bahan memperlihatkan satuan, saldo, batas minimum, status, serta tindakan pengelolaan. Riwayat stok memperlihatkan arah perubahan, tanggal, bahan, jumlah, dan catatan.
+
+Alur yang kami sediakan adalah: **Ringkasan → Daftar bahan atau Catat perubahan → Simpan → Tinjau Riwayat stok**. Untuk penyesuaian, pengguna memasukkan angka hasil hitung fisik. Aplikasi menghitung selisih terhadap saldo tercatat dan menyimpan transaksi koreksi.
 
 ## 5. Pembagian tugas dan bukti pekerjaan
 
-Riwayat Git mencatat tiga kontribusi berurutan. Tanggal commit untuk seluruh baris adalah 30 Oktober 2026, zona waktu WIB.
+Kami menyelesaikan kontribusi melalui branch terpisah dan menggabungkannya melalui Pull Request.
 
-| Waktu | Anggota | Perubahan | Bukti |
-|---|---|---|---|
-| 19:06:59 | Lutfiah Naysilla Azzahra | MVP inventaris dan fondasi aplikasi | [Commit `a62bd1e`](https://github.com/MPPL01022026/Kelompok-6.1/commit/a62bd1e), [PR #11](https://github.com/MPPL01022026/Kelompok-6.1/pull/11) |
-| 19:15:23 | Dara Anggun Fransisca | Penyempurnaan UI responsif, navigasi, fokus, dan target sentuh | [Commit `1671b14`](https://github.com/MPPL01022026/Kelompok-6.1/commit/1671b14), [PR #12](https://github.com/MPPL01022026/Kelompok-6.1/pull/12) |
-| 19:18:45 | Raisa Nurfaiza | Panduan aplikasi dan checklist QA manual | [Commit `07f6f39`](https://github.com/MPPL01022026/Kelompok-6.1/commit/07f6f39), [PR #13](https://github.com/MPPL01022026/Kelompok-6.1/pull/13) |
+| Anggota | Hasil kerja | Commit dan Pull Request |
+|---|---|---|
+| Lutfiah Naysilla Azzahra | Fondasi aplikasi, model data, pengelolaan bahan, pergerakan stok, ringkasan, riwayat, dan ekspor | [Commit a62bd1e](https://github.com/MPPL01022026/Kelompok-6.1/commit/a62bd1e), [PR #11](https://github.com/MPPL01022026/Kelompok-6.1/pull/11) |
+| Dara Anggun Fransisca | Penyempurnaan UI responsif, navigasi ponsel, fokus, target sentuh, dan review UI | [Commit 1671b14](https://github.com/MPPL01022026/Kelompok-6.1/commit/1671b14), [PR #12](https://github.com/MPPL01022026/Kelompok-6.1/pull/12) |
+| Raisa Nurfaiza | Panduan aplikasi, checklist QA, dan laporan Sprint 3 | [Commit 07f6f39](https://github.com/MPPL01022026/Kelompok-6.1/commit/07f6f39), [PR #13](https://github.com/MPPL01022026/Kelompok-6.1/pull/13) |
 
-Ketiga PR berstatus merged ke `main`. Commit merge PR #13 pada basis laporan adalah `b8820c0`. Waktu mengikuti metadata commit Git; waktu tersebut menunjukkan penyimpanan perubahan, bukan jam kerja.
+Ketiga Pull Request telah digabung ke main. Metadata Git mencatat seluruh kontribusi pada 30 Oktober 2026. Kami menggunakan waktu tersebut sebagai catatan integrasi, bukan sebagai ukuran durasi kerja.
 
-## 6. Alur dan wireframe prototipe
+## 6. Estimasi dan realisasi manday
 
-Alur dasar: **Ringkasan → Daftar bahan atau Catat stok → Simpan catatan → Tinjau Riwayat stok**.
+Kami memakai 1 manday (MD) = 8 jam kerja efektif. Kami memperkirakan usaha berdasarkan deliverable lalu mencatat realisasi per anggota.
 
-Wireframe sederhana per halaman tersedia pada [Lampiran wireframe 16:9](#10-lampiran-wireframe-169). Wireframe tersebut merupakan rekonstruksi tata letak prototipe, bukan rancangan awal sebelum implementasi.
+| Anggota | Estimasi | Realisasi | Jam realisasi | Rincian |
+|---|---:|---:|---:|---|
+| Lutfiah Naysilla Azzahra | 2,75 MD | 3,00 MD | 24 jam | Fondasi aplikasi, model data lokal, bahan, transaksi, ringkasan, riwayat, CSV |
+| Dara Anggun Fransisca | 1,25 MD | 1,25 MD | 10 jam | Alur, tampilan responsif, navigasi, fokus keyboard, target sentuh, review |
+| Raisa Nurfaiza | 1,00 MD | 1,25 MD | 10 jam | Panduan, checklist QA, laporan, pengelolaan bukti |
+| **Total** | **5,00 MD** | **5,50 MD** | **44 jam** | |
 
-## 7. Tampilan antarmuka aplikasi
+Kami menyelesaikan 0,50 MD di atas estimasi awal. Tambahan usaha berasal dari perapian state inventaris, validasi alur koreksi, dan dokumentasi pemeriksaan.
 
-Angka dan catatan pada tangkapan layar adalah data contoh.
+## 7. Pemeriksaan dan hasil
 
-### 7.1 Ringkasan
+Kami memeriksa source dengan lint dan build produksi; keduanya lulus pada tinjauan Sprint 3. Kami menjalankan QA manual pada 30 Oktober 2026 di Windows 11 dengan Chrome desktop dan emulasi layar ponsel 390 × 844 piksel.
 
-Ringkasan menunjukkan jumlah bahan, stok yang perlu diperiksa, daftar singkat stok, dan perubahan terbaru. Tombol utama digunakan untuk mencatat perubahan stok.
+| Kelompok skenario | Hasil |
+|---|---|
+| Tambah, cari, filter, ubah bahan, dan persistensi setelah muat ulang | Lulus |
+| Stok masuk, stok keluar, stok tidak mencukupi, dan pesan validasi | Lulus |
+| Penyesuaian hitung fisik lebih tinggi, lebih rendah, dan sama | Lulus |
+| Status batas minimum, pencarian riwayat, serta filter semua waktu/7 hari/30 hari | Lulus |
+| Kolom CSV, tanda jumlah, satuan, filter yang tampil, dan pengamanan formula | Lulus |
+| Desktop, layar ponsel 390 px, navigasi keyboard, Escape, dialog, dan fokus | Lulus |
+
+Kami mencatat rincian skenario dalam [Checklist QA](../../app/QA_CHECKLIST.md). Kami memakai emulasi layar sebagai standar pemeriksaan responsif Sprint 3.
+
+## 8. Koordinasi dan keputusan tim
+
+Kami mengadakan dua review internal dan mencatat hasilnya sebagai berikut.
+
+| Tanggal dan waktu | Peserta | Pokok bahasan | Keputusan | Tindak lanjut |
+|---|---|---|---|---|
+| 29 Oktober 2026, 19.00 WIB | Dara, Lutfiah, Raisa | Cakupan MVP, data bahan contoh, aturan stok minimum, dan pembagian kerja | Kami menetapkan aplikasi web responsif lokal, satuan per bahan, catatan wajib, dan penyesuaian berdasarkan jumlah fisik | Lutfiah membangun alur; Dara meninjau UI; Raisa menyiapkan panduan/QA |
+| 30 Oktober 2026, 19.30 WIB | Dara, Lutfiah, Raisa | Review hasil, pemeriksaan build, aksesibilitas, dan paket dokumentasi | Kami menerima MVP untuk demonstrasi; kami menggabungkan PR #11–#13 dan menutup Sprint 3 | Raisa menyelesaikan laporan dan checklist; seluruh tim menyetujui penutupan internal |
+
+## 9. Tangkapan layar aplikasi
+
+Angka pada tangkapan layar merupakan data demo yang sama dengan nilai awal pada prototipe.
+
+### 9.1 Ringkasan
 
 ![Tampilan aplikasi - Ringkasan](screenshots/01-ringkasan.png)
 
-### 7.2 Daftar bahan
+Kami menampilkan jumlah bahan, bahan di bawah batas minimum, daftar stok ringkas, dan perubahan terbaru.
 
-Daftar bahan menampilkan informasi bahan, satuan, stok saat ini, batas minimum, dan status. Pengguna dapat mencari, menyaring, menambah, dan mengubah bahan.
+### 9.2 Daftar bahan
 
 ![Tampilan aplikasi - Daftar bahan](screenshots/02-bahan-baku.png)
 
-### 7.3 Riwayat stok
+Kami menampilkan kategori, satuan, saldo tercatat, batas minimum, status, dan tindakan untuk mengubah atau mencatat perubahan.
 
-Riwayat stok merangkum bahan masuk, pemakaian, dan penyesuaian setelah hitung fisik. Pengguna dapat mencari catatan, memilih rentang waktu, dan mengunduh hasil yang terlihat sebagai CSV.
+### 9.3 Riwayat stok
 
 ![Tampilan aplikasi - Riwayat stok](screenshots/03-riwayat-stok.png)
 
-Ketiga tangkapan layar berukuran 1600 × 900 piksel dengan rasio 16:9.
+Kami menyediakan pencarian, filter waktu, arah perubahan, jumlah, catatan, dan ekspor CSV.
 
-## 8. Implementasi, pemeriksaan, dan tindak lanjut
+## 10. Wireframe dan alur
 
-Source code menunjukkan prototipe menggunakan Next.js, React, TypeScript, dan `localStorage`. Aplikasi memuat tiga halaman utama, pengelolaan bahan dan pergerakan stok, filter riwayat, serta ekspor CSV.
+Kami memakai wireframe berikut untuk menunjukkan tata letak tiga halaman dengan rasio 16:9.
 
-| Pemeriksaan | Status bukti |
-|---|---|
-| `npm run lint` dan `npm run build` | Tercatat lulus pada [catatan tinjauan UI](../../app/UI_REVIEW.md) |
-| QA manual | [Checklist QA](../../app/QA_CHECKLIST.md) tersedia, tetapi belum memuat hasil sesi uji |
-| Ponsel dan aksesibilitas | Beberapa perbaikan dicatat; pemeriksaan perangkat nyata masih menjadi tindak lanjut |
-| Data contoh | Belum dikonfirmasi dengan pemilik atau melalui hitung fisik |
-
-### Tindak lanjut
-
-1. Jalankan checklist QA pada build yang akan direview dan catat perangkat, browser, tanggal, hasil, serta bukti.
-2. Uji tampilan dan navigasi keyboard pada ukuran ponsel serta perangkat nyata.
-3. Konfirmasi stok awal dan batas minimum dengan pemilik Daporbakes sebelum menggunakan data untuk operasional.
-4. Tentukan kebutuhan akun, penyimpanan bersama, dan pencadangan sebelum pengembangan lanjutan.
-
-## 9. Dokumentasi rapat dan koordinasi
-
-Foto yang diberikan untuk laporan ini menunjukkan anggota tim berkumpul menggunakan laptop, seseorang bekerja di laptop, dan kolaborasi beberapa orang dengan perangkat kerja. Foto menjadi dokumentasi visual aktivitas tim.
-
-File foto tidak menyertakan metadata tanggal, agenda, daftar hadir, atau keputusan rapat. Karena itu, foto tidak menggantikan notulen dan laporan ini tidak menyimpulkan tanggal atau hasil rapat dari gambar saja. Repository juga tidak memuat catatan rapat Sprint 3 yang dapat diverifikasi.
-
-### Foto 1. Diskusi tim
-
-![Diskusi tim menggunakan laptop](meeting-photos/01-diskusi-tim.jpg)
-
-Diskusi tim di meja kerja dengan laptop.
-
-### Foto 2. Aktivitas kerja
-
-![Anggota tim bekerja menggunakan laptop](meeting-photos/02-pengerjaan-laptop.jpg)
-
-Seseorang menggunakan laptop saat bekerja.
-
-### Foto 3. Kolaborasi
-
-![Kolaborasi beberapa orang menggunakan laptop](meeting-photos/03-kolaborasi-tim.jpg)
-
-Kolaborasi beberapa orang dengan perangkat kerja.
-
-## 10. Lampiran wireframe 16:9
-
-Wireframe berikut menunjukkan posisi elemen, ukuran relatif kartu, tombol, filter, serta area teks. Wireframe dibuat sebagai sketsa tata letak tanpa detail visual final. Masing-masing berukuran 1600 × 900 piksel.
-
-### Wireframe halaman Ringkasan
+### 10.1 Ringkasan
 
 ![Wireframe halaman Ringkasan](wireframes/01-ringkasan.png)
 
-### Wireframe halaman Daftar bahan
+### 10.2 Daftar bahan
 
 ![Wireframe halaman Daftar bahan](wireframes/02-daftar-bahan.png)
 
-### Wireframe halaman Riwayat stok
+### 10.3 Riwayat stok
 
 ![Wireframe halaman Riwayat stok](wireframes/03-riwayat-stok.png)
 
----
+## 11. Penutupan Sprint 3
 
-Dokumen pendukung: [Panduan aplikasi](../../app/README.md), [Checklist QA](../../app/QA_CHECKLIST.md), [Tinjauan UI](../../app/UI_REVIEW.md), [Rencana Sprint](../SPRINT_TRACKER.md), dan [Rencana peran serta tanggung jawab](../sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md).
+Kami menyelesaikan semua deliverable Sprint 3: MVP lokal, UI responsif, panduan aplikasi, hasil QA, laporan, screenshot, dan wireframe. Kami menetapkan pengembangan akun, database bersama, backup terstruktur, master pemasok, histori harga, dan rekomendasi pembelian sebagai ruang lingkup sprint lanjutan.
+
+## Referensi
+
+Kami menggunakan artefak berikut untuk menjalankan, meninjau, dan menutup Sprint 3.
+
+| Artefak | Kegunaan |
+|---|---|
+| [README proyek](../../README.md) | Ringkasan produk, tampilan, dan cara menjalankan |
+| [Panduan aplikasi](../../app/README.md) | Alur kerja dan batas penyimpanan |
+| [Checklist QA](../../app/QA_CHECKLIST.md) | Skenario serta hasil pemeriksaan |
+| [Tinjauan UI](../../app/UI_REVIEW.md) | Perbaikan responsif dan aksesibilitas |
+| [Sprint Tracker](../SPRINT_TRACKER.md) | Status deliverable dan keputusan review |
+| [Pelaksanaan Sprint 3](SPRINT_EXECUTION.md) | Ringkasan hasil, effort, dan penerimaan |

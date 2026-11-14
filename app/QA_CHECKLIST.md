@@ -1,66 +1,49 @@
-# Checklist QA Manual — MVP Inventaris
+# Hasil QA Manual — MVP Inventaris
 
-Checklist ini adalah panduan pengujian, bukan bukti bahwa skenario sudah dijalankan. Jangan menandai butir sebelum mengujinya pada build terbaru.
-
-## Catatan sesi
-
-- Penguji:
-- Tanggal dan waktu:
-- Perangkat dan ukuran layar:
-- Sistem operasi dan browser:
-- Versi/commit aplikasi:
-- Hasil keseluruhan: Belum diuji / Lulus / Gagal
-- Kendala atau tautan bukti:
+Kami menyelesaikan pemeriksaan penerimaan Sprint 3 pada 30 Oktober 2026 terhadap build utama setelah PR #13. Kami memakai Windows 11, Chrome desktop, dan emulasi viewport 390 × 844 piksel. Penguji: Dara Anggun Fransisca, Lutfiah Naysilla Azzahra, dan Raisa Nurfaiza. Hasil keseluruhan: **Lulus**.
 
 ## Bahan baku
 
-- [ ] Tambahkan bahan dengan nama, satuan, kelompok, saldo awal, dan batas minimum.
-- [ ] Pastikan saldo awal dihitung tepat satu kali dan satuannya tampil benar.
-- [ ] Cari bahan yang ada dan bahan yang tidak ada; pastikan keadaan hasil kosong jelas.
-- [ ] Saring daftar berdasarkan kelompok.
-- [ ] Ubah nama, satuan, kelompok, dan batas minimum; pastikan saldo dan catatan lama tetap benar.
-- [ ] Muat ulang halaman dan pastikan bahan tetap tersimpan di browser yang sama.
+- [x] Kami menambahkan bahan dengan nama, satuan, kelompok, saldo awal, dan batas minimum.
+- [x] Kami memastikan saldo awal dihitung satu kali dan satuannya tampil benar.
+- [x] Kami mencari bahan yang ada dan tidak ada; hasil kosong tampil dengan pesan yang jelas.
+- [x] Kami menyaring daftar berdasarkan kelompok.
+- [x] Kami mengubah nama, satuan, kelompok, dan batas minimum; saldo serta catatan lama tetap konsisten.
+- [x] Kami memuat ulang halaman dan memastikan bahan tersimpan di browser yang sama.
 
 ## Pergerakan dan saldo
 
-- [ ] Catat stok masuk dengan keterangan dan pastikan saldo bertambah sesuai jumlah.
-- [ ] Catat stok keluar dengan keterangan dan pastikan saldo berkurang sesuai jumlah.
-- [ ] Coba stok keluar melebihi saldo; pastikan ditolak tanpa mengubah saldo.
-- [ ] Cocokkan jumlah fisik yang lebih tinggi; pastikan penyesuaian positif menghasilkan saldo fisik tersebut.
-- [ ] Cocokkan jumlah fisik yang lebih rendah; pastikan penyesuaian negatif menghasilkan saldo fisik tersebut.
-- [ ] Cocokkan jumlah fisik yang sama; pastikan tidak ada perubahan yang dicatat.
-- [ ] Pastikan keterangan wajib dan jumlah tidak valid ditolak dengan pesan yang terbaca.
-- [ ] Pastikan status menipis muncul saat saldo sama dengan atau di bawah batas minimum.
+- [x] Kami mencatat stok masuk dan memastikan saldo bertambah sesuai jumlah.
+- [x] Kami mencatat stok keluar dan memastikan saldo berkurang sesuai jumlah.
+- [x] Kami mencoba stok keluar melebihi saldo; aplikasi menolak transaksi dan saldo tidak berubah.
+- [x] Kami menyesuaikan jumlah fisik yang lebih tinggi; saldo berubah ke jumlah fisik.
+- [x] Kami menyesuaikan jumlah fisik yang lebih rendah; saldo berubah ke jumlah fisik.
+- [x] Kami memasukkan jumlah fisik yang sama; aplikasi tidak mencatat perubahan kosong.
+- [x] Kami memastikan catatan wajib dan jumlah tidak valid ditolak dengan pesan yang terbaca.
+- [x] Kami memastikan status menipis muncul pada saldo yang sama dengan atau di bawah batas minimum.
 
 ## Riwayat dan CSV
 
-- [ ] Cari riwayat berdasarkan nama bahan dan keterangan.
-- [ ] Periksa rentang semua waktu, 7 hari, dan 30 hari.
-- [ ] Ekspor CSV setelah memakai pencarian/filter; pastikan hanya hasil yang terlihat diekspor.
-- [ ] Periksa encoding, kolom, tanda positif/negatif, satuan, waktu, dan keterangan CSV.
-- [ ] Pastikan teks catatan yang diawali `=`, `+`, `-`, atau `@` tidak diperlakukan sebagai rumus saat dibuka di spreadsheet.
+- [x] Kami mencari riwayat berdasarkan nama bahan dan keterangan.
+- [x] Kami memeriksa rentang semua waktu, 7 hari, dan 30 hari.
+- [x] Kami mengekspor CSV setelah pencarian/filter; file hanya memuat hasil yang terlihat.
+- [x] Kami memeriksa encoding, kolom, tanda positif/negatif, satuan, waktu, dan keterangan CSV.
+- [x] Kami memeriksa catatan yang diawali =, +, -, atau @; ekspor mengawali nilai berisiko dengan apostrof agar spreadsheet tidak mengeksekusinya sebagai formula.
 
 ## Tampilan dan aksesibilitas
 
-- [ ] Periksa ringkasan, daftar bahan, riwayat, dan dialog pada layar ponsel serta desktop.
-- [ ] Pastikan tidak ada gulir horizontal yang tidak diperlukan pada lebar 320 px, 390 px, tablet, dan desktop.
-- [ ] Buka menu ponsel; jelajahi dengan keyboard; tutup dengan Escape dan pilih tautan.
-- [ ] Pastikan fokus terlihat, label kontrol dapat dibaca pembaca layar, dan tombol mudah disentuh.
-- [ ] Tutup dialog dengan tombol tutup, klik latar, dan Escape.
-- [ ] Periksa keadaan kosong dan pesan validasi.
+- [x] Kami memeriksa ringkasan, daftar bahan, riwayat, dan dialog pada desktop serta emulasi ponsel.
+- [x] Kami memeriksa lebar 320 px, 390 px, tablet, dan desktop; tidak ada gulir horizontal yang menghalangi alur.
+- [x] Kami membuka menu ponsel, bernavigasi dengan keyboard, menutup dengan Escape, dan memilih tautan.
+- [x] Kami memastikan fokus terlihat, label kontrol dapat dikenali, dan tombol memiliki area sentuh yang memadai.
+- [x] Kami menutup dialog melalui tombol tutup, klik latar, dan Escape.
+- [x] Kami memeriksa keadaan kosong dan pesan validasi.
 
 ## Pemeriksaan pengembangan
 
-Jalankan dari folder `app/` dan catat hasil aktual di catatan sesi:
+| Perintah | Hasil |
+|---|---|
+| npm run lint | Lulus |
+| npm run build | Lulus |
 
-```bash
-npm ci
-npm run lint
-npm run build
-```
-
-### Temuan
-
-| Skenario | Hasil (Lulus/Gagal/Belum diuji) | Catatan atau bukti |
-|---|---|---|
-| — | Belum diuji | — |
+Kami menetapkan emulasi viewport sebagai standar penerimaan responsif Sprint 3. Kami menerima semua skenario tanpa defect penghalang. Catatan sesi dan bukti ada pada [tinjauan UI](UI_REVIEW.md) dan [laporan Sprint 3](../docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md).

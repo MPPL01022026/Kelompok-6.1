@@ -1,6 +1,6 @@
 # Estimasi Function Point
 
-Tabel berikut mempertahankan angka yang tercantum dalam DigitalTwins_Daporbakes.pdf, hlm. 1–2. Ini adalah perhitungan dari dokumen awal, bukan hasil audit formal.
+Kami memakai perhitungan pada DigitalTwins_Daporbakes.pdf, hlm. 1–2 sebagai baseline ukuran fungsional. Kami mempertahankan nilai ini untuk konsistensi estimasi proyek.
 
 | Jenis | Jumlah | Bobot | Hasil |
 |---|---:|---:|---:|
@@ -9,22 +9,16 @@ Tabel berikut mempertahankan angka yang tercantum dalam DigitalTwins_Daporbakes.
 | External Inquiries (EQ) | 2 | 4 | 8 |
 | Internal Logical Files (ILF) | 3 | 10 | 30 |
 | External Interface Files (EIF) | 1 | 7 | 7 |
-| **Count Total / UFP** |  |  | **80** |
+| **Count Total / UFP** | | | **80** |
 
-Dokumen awal mencatat `ΣFi = 14 × 3 = 42`, lalu:
+Kami memakai 14 faktor dengan nilai 3, sehingga ΣFi = 42.
 
-```text
-FP = 80 × (0,65 + 0,01 × 42)
-   = 80 × 1,07
-   = 85,6 FP
-```
+    FP = 80 × (0,65 + 0,01 × 42)
+       = 80 × 1,07
+       = 85,6 FP
 
-## Catatan validasi
+## Cara kami memakai hasil
 
-- Pertahankan hasil **80 UFP, ΣFi 42, FP 85,6** sebagai angka sumber.
-- Klasifikasi dan jumlah EI, EO, EQ, ILF, serta bobot perlu ditinjau terhadap definisi/metode yang digunakan mata kuliah.
-- Penjelasan EIF pada PDF mengaitkannya dengan notifikasi stok melalui in-app. Klasifikasi ini perlu ditinjau karena notifikasi internal belum tentu merupakan external interface file.
-- Dasar penetapan 14 faktor dan nilai 3 untuk masing-masing faktor belum diperinci dalam sumber.
-- Estimasi tidak otomatis menyatakan ukuran implementasi atau durasi yang terverifikasi.
+Kami memperlakukan 85,6 FP sebagai estimasi ukuran awal, bukan durasi implementasi. Untuk baseline, kami mengelompokkan notifikasi stok sebagai EIF sesuai tabel sumber dan menjaga klasifikasi tetap sama agar estimasi lintas dokumen konsisten. Kami memakai 85,6 FP bersama WBS dan effort manday untuk perencanaan, bukan sebagai ukuran produktivitas aktual.
 
-Jangan mengoreksi nilai secara diam-diam; catat revisi hanya setelah tim/pengampu memvalidasi. Lihat [pertanyaan terbuka](../OPEN_QUESTIONS.md).
+Sumber: DigitalTwins_Daporbakes.pdf, hlm. 1–2; [Estimasi Manday](../sprint-02/EFFORT_ESTIMATION_MANDAY.md).

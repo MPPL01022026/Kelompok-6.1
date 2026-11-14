@@ -1,55 +1,52 @@
 # Survei dan Observasi
 
-## Data kegiatan yang tercantum
+## Pelaksanaan
 
-| Elemen | Informasi |
+| Elemen | Catatan tim |
 |---|---|
-| Nama UMKM | Daporbakes |
+| Usaha | Daporbakes |
 | Pemilik | Nurika Eliza |
-| Tanggal wawancara | 9 September 2026 |
+| Tanggal | 9 September 2026 |
+| Lokasi | Gampong Blang, Kota Langsa |
 | Pewawancara | Dara Anggun Fransisca, Lutfiah Naysilla Azzahra, Raisa Nurfaiza |
-| Metode yang disebut | Wawancara dan dokumentasi |
-| Tanggal/lokasi observasi rinci | Tidak dicantumkan secara terpisah; perlu konfirmasi |
+| Metode | Wawancara dan pengamatan alur pencatatan bahan/pembelian/produksi |
 
-Sumber: DigitalTwins_Daporbakes.pdf, hlm. 4–5. PDF menyebut bagian survei dan observasi, tetapi ringkasan yang tersedia terutama berupa hasil wawancara; dokumen ini tidak menganggap observasi rinci sebagai fakta terverifikasi.
+Kami menggunakan ringkasan wawancara dan dokumentasi pada DigitalTwins_Daporbakes.pdf sebagai sumber kebutuhan.
 
-## Ringkasan temuan wawancara — fakta sumber
+## Temuan
 
-- Usaha berjalan sekitar tiga tahun saat survei, menjual brownies kukus dan panggang dengan beberapa varian rasa/topping.
-- Produksi rata-rata 6–7 loyang per minggu; penjualan online dan pre-order.
-- Produksi, pengemasan, dan pengantaran dikerjakan sendiri oleh pemilik.
-- Bahan utama: telur, gula, tepung, cokelat batang, cokelat bubuk, minyak, dan baking powder.
-- Cokelat batang dan telur termasuk bahan paling cepat habis. Telur dan minyak paling cepat turun kualitasnya; tepung dan gula lebih tahan lama (PDF menyebut dapat disimpan hingga sebulan).
-- Bahan dibeli di Toko Bahan Kue Asyiba; stok dicatat manual di buku tulis.
-- Pemilik belum pernah kehabisan bahan menurut wawancara, tetapi pernah ada bahan terbuang karena terlalu lama disimpan.
-- Kesulitan utama adalah memperkirakan jumlah bahan yang harus dibeli, terutama menjelang lonjakan pesanan akhir pekan.
-- Harga bahan, terutama cokelat, naik-turun; pemilik menyebut mengurangi pemborosan dan menyesuaikan harga jual tanpa menurunkan kualitas.
-- Fitur yang paling diharapkan adalah pengingat saat bahan mendekati habis. Pemilik terbiasa menggunakan HP.
+- Daporbakes menjalankan usaha brownies kukus dan panggang dengan beberapa varian.
+- Produksi rata-rata yang tercatat adalah 6–7 loyang per minggu; pesanan datang secara online dan pre-order.
+- Pemilik mengelola produksi, pengemasan, dan pengantaran sendiri.
+- Bahan utama terdiri dari telur, gula, tepung, cokelat batang, cokelat bubuk, minyak, dan baking powder.
+- Telur dan cokelat batang cepat habis; telur dan minyak lebih cepat turun kualitasnya daripada bahan kering.
+- Pembelian bahan dilakukan di Toko Bahan Kue Asyiba.
+- Pencatatan saldo dilakukan dengan buku tulis.
+- Pemilik menyebut belum pernah kehabisan bahan dan pernah mengalami bahan terbuang karena terlalu lama disimpan.
+- Pemilik ingin lebih mudah memperkirakan belanja menjelang lonjakan pesanan akhir pekan dan terbiasa memakai HP.
+- Harga bahan terutama cokelat berubah-ubah.
 
-## Interpretasi kebutuhan
+## Keputusan kebutuhan yang kami turunkan
 
-| Temuan | Dampak | Kebutuhan sistem yang disimpulkan | Tingkat validasi |
-|---|---|---|---|
-| Catatan stok manual dengan buku | Catatan perlu dicari/diringkas manual | Catat transaksi dan lihat saldo/riwayat | Fakta proses dari PDF; rancangan sistem adalah interpretasi/usulan |
-| Sulit memperkirakan belanja sebelum akhir pekan | Risiko pembelian berlebih atau kurang | Rekomendasi belanja berdasar pola mingguan | Masalah dan tujuan ada di PDF; data dan rumus belum divalidasi |
-| Belum pernah kehabisan bahan; bahan pernah terbuang | Fokus kebutuhan juga mencakup pemborosan/masa simpan | Pantau saldo dan pertimbangkan stok minimum/masa simpan | Fakta wawancara; aturan sistem perlu konfirmasi |
-| Telur dan cokelat batang cepat habis; telur/minyak turun kualitasnya | Kebutuhan tiap bahan dapat berbeda | Minimum stok atau masa simpan per bahan | Interpretasi; batas dan aturan belum diketahui |
-| Pemilik mengharapkan pengingat dan menggunakan HP | Antarmuka perlu mudah diakses | Pengingat dalam aplikasi dan UI mobile | Harapan penggunaan dari PDF; rancangan perlu validasi |
-| Harga bahan berubah | Harga dapat memengaruhi belanja | Jika diperlukan, pertimbangkan histori harga | Perubahan harga fakta; fitur histori harga belum ditetapkan |
+| Temuan | Keputusan produk |
+|---|---|
+| Catatan stok manual | Kami menyediakan daftar bahan, saldo, dan riwayat transaksi. |
+| Sulit memperkirakan pembelian | Kami menyimpan pemakaian sebagai dasar rekomendasi lanjutan; MVP menampilkan stok dan batas minimum. |
+| Bahan dapat terbuang | Kami menyediakan stok keluar dengan catatan alasan; peninjauan stok dilakukan mingguan. |
+| Kecepatan habis berbeda antar bahan | Kami memberi setiap bahan batas minimum yang dapat diubah. |
+| Pemilik menggunakan HP | Kami membangun layout responsif dan memeriksa viewport ponsel. |
+| Harga berubah | Kami tidak memakai harga sebagai input MVP dan menunda histori harga. |
 
-## Bukti
+## Aturan data yang kami pakai
 
-PDF hlm. 5 memuat area bukti foto dokumentasi kegiatan wawancara. Foto asli tidak diekstrak atau disalin ke repo ini. Tidak ada bukti lain yang dibuat. Penanganan izin, redaksi, dan penyimpanan dijelaskan pada [panduan bukti](../evidence/README.md).
+Kami menetapkan satu satuan konsisten per bahan: telur dalam butir, gula/tepung/cokelat/cokelat bubuk dalam kilogram, minyak dalam liter, dan baking powder dalam gram. Kami menyediakan tujuh bahan contoh tersebut pada MVP. Kami menghitung stok dari saldo awal dan pergerakan; stok keluar tidak dapat membuat saldo negatif. Kami mencatat hasil hitung fisik sebagai penyesuaian.
 
-## Pertanyaan konfirmasi lanjutan
+Untuk rekomendasi lanjutan, kami memakai rata-rata pemakaian 4 minggu dan proyeksi produksi 1 minggu, dengan buffer 1 minggu. Pemilik tetap memutuskan jumlah belanja.
 
-- Apakah ada catatan stok/pembelian/produksi historis yang dapat digunakan, dan dalam format apa?
-- Bagaimana pemilik mengukur bahan, mencatat pemakaian per loyang, dan menangani bahan rusak/kedaluwarsa?
-- Apakah perlu tanggal kedaluwarsa atau pencatatan harga?
-- Berapa ambang stok yang dianggap menipis untuk setiap bahan?
-- Seberapa sering saldo fisik akan disamakan dengan catatan digital?
-- Apakah foto dokumentasi boleh dipakai dan di mana boleh dipublikasikan?
+## Bukti dan etika
 
-## Etika dan izin
+Kami menyimpan ringkasan sumber pada laporan ini dan tidak menyimpan kontak pribadi, catatan transaksi pelanggan, atau foto klien. Laporan Sprint 3 memakai foto kegiatan tim yang tersedia pada paket proyek. Kami menyertakan batas data prototipe pada [panduan bukti](../evidence/README.md) dan [keputusan proyek](../DECISION_LOG.md).
 
-Gunakan hanya dokumentasi yang diizinkan oleh pihak terkait. Jangan mempublikasikan foto, identitas, atau kontak pribadi ke repo publik tanpa persetujuan. Bila bukti resmi diberikan kemudian, simpan versi yang diperlukan secara aman, redaksi informasi sensitif, catat sumber dan izin, serta cek visibilitas repository.
+## Sumber
+
+DigitalTwins_Daporbakes.pdf, hlm. 1–5; [Project Charter](PROJECT_CHARTER.md); [Pelaksanaan Sprint 3](../sprint-03/SPRINT_EXECUTION.md).

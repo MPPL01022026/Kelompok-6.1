@@ -1,86 +1,79 @@
-# Daporbakes · Catatan stok bahan
+# Daporbakes — Catatan Stok Bahan
 
-**Prototipe pencatatan stok bahan baku untuk usaha brownies Daporbakes.** Lihat daftar bahan, catat pembelian dan pemakaian, lalu telusuri perubahan stok.
+Kami mengembangkan prototipe stok bahan baku untuk usaha brownies Daporbakes. Aplikasi membantu pengguna melihat daftar bahan, mencatat pembelian dan pemakaian, menyesuaikan saldo setelah hitung fisik, serta menelusuri perubahan stok.
 
-> Aplikasi masih berupa prototipe. Angka awal hanya contoh dan perlu dicocokkan dengan stok fisik. Data tersimpan di browser ini dan belum tersambung ke perangkat lain.
+## Status Sprint 3
+
+Kami telah menyelesaikan MVP lokal pada Sprint 3. Aplikasi menyimpan data pada browser/perangkat yang sedang digunakan dan memakai angka demo untuk bahan awal. Untuk simulasi operasional, pengguna memasukkan hasil hitung fisik melalui fitur Sesuaikan stok.
 
 ## Tampilan aplikasi
 
-### 1. Ringkasan
+### Ringkasan
 
-Ringkasan menampilkan jumlah bahan, stok yang sudah mencapai batas minimum, daftar stok, dan perubahan terbaru. Gunakan **Catat perubahan** untuk merekam pembelian, pemakaian, atau hasil hitung fisik.
+Kami menampilkan jumlah bahan, penanda stok minimum, daftar stok, dan perubahan terbaru. Tombol Catat perubahan membuka alur stok masuk, stok keluar, atau penyesuaian.
 
 ![Halaman Ringkasan Daporbakes menampilkan jumlah stok dan perubahan terbaru](docs/sprint-03/screenshots/01-ringkasan.png)
 
-### 2. Daftar bahan
+### Daftar bahan
 
-Daftar bahan menampilkan satuan, stok saat ini, batas minimum, dan status setiap bahan. Cari atau saring daftar, tambahkan bahan, lalu ubah informasinya saat diperlukan.
+Kami menampilkan satuan, saldo, batas minimum, dan status bahan. Pengguna dapat mencari, menyaring kelompok, menambah bahan, dan mengubah informasi bahan.
 
 ![Halaman Daftar bahan Daporbakes menampilkan satuan, stok saat ini, dan batas minimum](docs/sprint-03/screenshots/02-bahan-baku.png)
 
-### 3. Riwayat stok
+### Riwayat stok
 
-Riwayat stok mencatat bahan masuk, pemakaian, dan penyesuaian setelah hitung fisik. Cari catatan atau pilih rentang waktu, lalu unduh hasil yang tampil sebagai CSV.
+Kami menampilkan bahan masuk, pemakaian, dan penyesuaian. Pengguna dapat mencari catatan, memilih periode, dan mengunduh baris yang tampil sebagai CSV.
 
 ![Halaman Riwayat stok Daporbakes menampilkan bahan masuk, pemakaian, dan penyesuaian](docs/sprint-03/screenshots/03-riwayat-stok.png)
 
-Ketiga tangkapan layar aplikasi di atas juga berukuran 1600 × 900 piksel (16:9).
+### Wireframe
 
-## Wireframe tiap halaman
-
-Wireframe sederhana berikut hanya menunjukkan posisi elemen, ukuran relatif kartu, tombol, dan area teks—tanpa detail visual atau data final. Masing-masing gambar berukuran 1600 × 900 piksel (16:9).
-
-### Wireframe Ringkasan
+Kami menyertakan wireframe sederhana untuk tiga halaman inti. Setiap gambar berukuran 1600 × 900 piksel dengan rasio 16:9.
 
 ![Wireframe 16:9 halaman Ringkasan](docs/sprint-03/wireframes/01-ringkasan.png)
 
-### Wireframe Daftar bahan
-
 ![Wireframe 16:9 halaman Daftar bahan](docs/sprint-03/wireframes/02-daftar-bahan.png)
-
-### Wireframe Riwayat stok
 
 ![Wireframe 16:9 halaman Riwayat stok](docs/sprint-03/wireframes/03-riwayat-stok.png)
 
 ## Fitur MVP
 
-- Melihat ringkasan persediaan dan penanda bahan yang mencapai batas minimum.
-- Menambah dan mengubah bahan, satuan, kelompok, stok awal, serta batas minimum.
-- Mencatat bahan masuk, pemakaian, dan penyesuaian setelah hitung fisik.
-- Mencari dan menyaring daftar bahan maupun riwayat stok.
-- Mengunduh catatan yang tampil sebagai CSV.
-- Menyimpan data di `localStorage` browser.
+- Ringkasan persediaan dan penanda bahan pada/bawah batas minimum.
+- Tambah, ubah, cari, dan saring bahan, satuan, kelompok, saldo awal, serta batas minimum.
+- Catat stok masuk, pemakaian, dan penyesuaian hitung fisik.
+- Cari dan saring riwayat berdasarkan teks dan periode.
+- Unduh CSV dari riwayat yang sedang tampil.
+- Simpan data di localStorage browser.
 
 ## Menjalankan aplikasi
 
-Perlu Node.js 20.9 atau lebih baru. Dari folder `app/` jalankan:
+Kami memakai Node.js 20.9 atau lebih baru. Dari folder app, jalankan:
 
-```bash
+~~~bash
 npm ci
 npm run dev
-```
+~~~
 
-Buka [http://localhost:3000](http://localhost:3000). Pemeriksaan build:
+Buka http://localhost:3000. Untuk memeriksa build produksi, jalankan:
 
-```bash
+~~~bash
 npm run lint
 npm run build
-```
+npm start
+~~~
 
-Panduan lebih lengkap dan batasan penggunaan ada di [app/README.md](app/README.md). Checklist pemeriksaan manual ada di [app/QA_CHECKLIST.md](app/QA_CHECKLIST.md).
+Panduan penggunaan dan batas penyimpanan tersedia pada [app/README.md](app/README.md). Hasil pemeriksaan manual ada pada [app/QA_CHECKLIST.md](app/QA_CHECKLIST.md).
 
 ## Tim dan kontribusi Sprint 3
 
-| Anggota | Kontribusi yang tercatat |
+| Anggota | Hasil kerja |
 |---|---|
-| Lutfiah Naysilla Azzahra | Implementasi MVP inventaris |
-| Dara Anggun Fransisca | Penyempurnaan tampilan buku stok responsif dan tinjauan UI |
-| Raisa Nurfaiza | Panduan menjalankan aplikasi dan checklist QA |
+| Lutfiah Naysilla Azzahra | Fondasi dan implementasi MVP inventaris |
+| Dara Anggun Fransisca | Penyempurnaan UI responsif dan review aksesibilitas |
+| Raisa Nurfaiza | Panduan, checklist QA, dan laporan |
 
-Rincian bukti pengembangan, koordinasi, dan tindak lanjut Sprint 3 ada di [dokumen eksekusi Sprint 3](docs/sprint-03/SPRINT_EXECUTION.md). Rencana sprint lain tersedia di [docs/SPRINT_TRACKER.md](docs/SPRINT_TRACKER.md) dan folder `docs/`.
+Kami mencatat bukti Pull Request, keputusan tim, effort, dan hasil QA pada [laporan Sprint 3](docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md). Roadmap dan status tiap deliverable tersedia pada [Sprint Tracker](docs/SPRINT_TRACKER.md) dan [roadmap](PLANNING.md).
 
-Laporan Project Execution memuat pembagian tugas, bukti PR, progres prototipe, dokumentasi koordinasi, tangkapan layar, dan lampiran wireframe 16:9: [versi Markdown](docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md) atau [versi PDF](docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.pdf).
+## Batas prototipe
 
-## Batasan prototipe
-
-Data hanya tersimpan pada browser dan perangkat yang sedang digunakan. Belum ada login, database bersama, sinkronisasi antarperangkat, atau cadangan cloud. Stok awal dan batas minimum contoh perlu dicocokkan dengan hitungan fisik sebelum digunakan. Ekspor CSV hanya berisi perubahan stok yang sedang tampil, bukan cadangan lengkap seluruh data.
+Kami menyimpan data pada browser dan perangkat yang sedang digunakan. Aplikasi Sprint 3 tidak menyediakan akun, database bersama, sinkronisasi antarperangkat, backup cloud, master pemasok, histori harga, atau rekomendasi belanja otomatis. CSV berisi perubahan stok yang sedang tampil dan bukan backup lengkap aplikasi.
