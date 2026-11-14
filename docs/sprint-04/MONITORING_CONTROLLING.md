@@ -149,4 +149,3 @@ Kami mengendalikan scope dengan menyelesaikan alur pencatatan utama lebih dulu. 
 - [Risk Register](../sprint-02/RISK_REGISTER.md)
 - [Laporan Pelaksanaan Sprint 3](../sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md)
 - [Sprint 3 execution notes](../sprint-03/SPRINT_EXECUTION.md)
-- [Contoh format Monitoring & Controlling Kelompok 9](https://github.com/MPPL01022026/kelompok-9/blob/main/docs/sprint-04/MONITORING_CONTROLLING.md)
