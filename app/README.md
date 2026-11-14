@@ -1,42 +1,42 @@
-# Prototipe stok bahan Daporbakes
+# Prototipe Stok Bahan Daporbakes
 
-Prototipe ini membantu mencatat bahan baku, perubahan stok, dan hasil hitung fisik. Data awal hanya contoh; cocokkan dengan stok sebenarnya sebelum digunakan.
+Kami membuat prototipe ini untuk mencatat bahan baku, perubahan stok, dan hasil hitung fisik. Nilai awal berfungsi sebagai data demo; pengguna dapat menggantinya melalui alur penyesuaian stok.
 
 ## Menjalankan aplikasi
 
-Persyaratan: Node.js 20.9 atau lebih baru.
+Kami memakai Node.js 20.9 atau lebih baru. Dari folder app, jalankan:
 
-Dari folder `app/`, jalankan:
-
-```bash
+~~~bash
 npm ci
 npm run dev
-```
+~~~
 
-Buka [http://localhost:3000](http://localhost:3000). Untuk memeriksa build produksi:
+Buka http://localhost:3000. Untuk build produksi:
 
-```bash
+~~~bash
 npm run lint
 npm run build
 npm start
-```
+~~~
 
-Hentikan server lokal dengan `Ctrl+C`.
+Hentikan server lokal dengan Ctrl+C.
 
 ## Alur penggunaan
 
-1. Buka **Daftar bahan**, lalu cocokkan stok awal dan batas minimum bahan contoh dengan hasil hitung fisik.
-2. Tambahkan bahan dengan nama, satuan, kelompok, stok awal, dan batas minimum. Gunakan satuan yang sama setiap kali mencatat bahan tersebut.
-3. Pilih **Catat perubahan** untuk merekam **Stok masuk**, **Stok keluar**, atau **Sesuaikan stok**. Tambahkan catatan untuk menjelaskan setiap perubahan.
-4. Saat menyesuaikan stok, masukkan jumlah hasil hitung fisik. Aplikasi mencatat selisih dari stok sebelumnya. Jumlah pemakaian yang melebihi stok akan ditolak.
-5. Buka **Riwayat stok** untuk mencari catatan, memilih rentang waktu, dan mengunduh hasil yang tampil sebagai CSV.
+1. Buka Daftar bahan dan tinjau tujuh bahan demo serta satuannya.
+2. Tambahkan bahan dengan nama, satuan, kelompok, stok awal, dan batas minimum. Kami memakai satu satuan yang sama untuk setiap bahan.
+3. Pilih Catat perubahan untuk merekam Stok masuk, Stok keluar, atau Sesuaikan stok. Kami meminta catatan singkat untuk setiap pergerakan.
+4. Saat menyesuaikan stok, masukkan jumlah hasil hitung fisik. Aplikasi menyimpan selisih dari saldo sebelumnya. Aplikasi menolak stok keluar yang melebihi saldo.
+5. Buka Riwayat stok untuk mencari catatan, memilih periode, dan mengunduh baris yang sedang tampil sebagai CSV.
 
-## Penyimpanan dan batasan
+## Penyimpanan dan batas produk
 
-Data disimpan di `localStorage` pada browser dan perangkat yang sedang digunakan. Data tidak tersinkron ke perangkat lain; prototipe ini belum memiliki akun, database bersama, atau cadangan cloud. Ekspor CSV hanya memuat perubahan stok yang sedang tampil, bukan cadangan lengkap daftar bahan. Jangan gunakan prototipe ini sebagai satu-satunya catatan stok operasional.
+Kami menyimpan data di localStorage browser dan perangkat yang sedang digunakan. Aplikasi ini berjalan untuk satu pengguna pada satu perangkat; data tidak disinkronkan. Sprint 3 tidak menyediakan akun, database bersama, backup cloud, master pemasok, histori harga, atau rekomendasi pembelian otomatis.
 
-Untuk memulai ulang data contoh pada browser, hapus data situs untuk `localhost:3000` melalui pengaturan browser. Tindakan ini menghapus data aplikasi lokal pada profil tersebut.
+Ekspor CSV memuat perubahan stok yang tampil setelah filter. CSV tersebut bukan backup lengkap daftar bahan. Kami menggunakan prototipe sebagai demonstrasi alur stok, bukan sebagai satu-satunya catatan operasional.
 
-## QA
+Untuk mengembalikan data demo, hapus data situs untuk localhost:3000 melalui pengaturan browser. Tindakan ini menghapus data aplikasi lokal pada profil tersebut.
 
-Gunakan [QA_CHECKLIST.md](QA_CHECKLIST.md) untuk meninjau alur manual. Tandai butir setelah benar-benar dicoba dan catat perangkat, browser, tanggal, serta hasilnya.
+## Hasil QA
+
+Kami menyelesaikan checklist penerimaan Sprint 3. Rincian skenario, lingkungan, dan hasil ada pada [QA_CHECKLIST.md](QA_CHECKLIST.md).

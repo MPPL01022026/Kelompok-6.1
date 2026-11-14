@@ -1,25 +1,19 @@
 # Tinjauan UI Sprint 3
 
-## Ruang lingkup
+Kami meninjau navigasi ponsel, penggunaan keyboard, fokus yang terlihat, ukuran target sentuh, dan ruang aman layar. Kami menyelesaikan perbaikan berikut sebelum penutupan Sprint 3.
 
-Tinjauan kode berfokus pada navigasi ponsel, penggunaan keyboard, fokus yang terlihat, ukuran target sentuh, dan ruang aman layar. Perubahan ini melengkapi MVP Lutfiah tanpa mengubah alur atau perhitungan inventaris.
+## Temuan dan perbaikan
 
-## Temuan dan keputusan
-
-| Temuan | Perbaikan |
+| Temuan | Perbaikan yang kami terapkan |
 |---|---|
-| Drawer navigasi yang bergeser ke luar layar masih dapat menerima fokus keyboard ketika tertutup. | Sembunyikan drawer tertutup pada breakpoint ponsel agar tautannya keluar dari urutan fokus dan aksesibilitas. |
-| Menu ponsel tidak melaporkan status terbuka ke teknologi bantu, dan fokus tidak dipindahkan saat menu dibuka atau ditutup dengan Escape. | Tambahkan `aria-expanded` dan `aria-controls`; pindahkan fokus ke tautan pertama saat dibuka dan kembalikan ke tombol pemicu ketika ditutup. |
-| Indikator fokus sebelumnya kurang kontras di atas permukaan terang. | Gunakan outline fokus yang lebih gelap dengan offset yang jelas, termasuk untuk tautan. |
-| Beberapa tombol baris terlalu kecil untuk disentuh dengan nyaman. | Tingkatkan tinggi dan lebar minimum tombol tindakan serta tinggi tombol navigasi dan aksi pada ponsel. |
-| Dialog dan notifikasi dekat tepi layar pada perangkat dengan area aman. | Terapkan padding berbasis safe area untuk dialog dan posisi notifikasi. |
+| Drawer tertutup masih dapat menerima fokus keyboard | Kami menyembunyikan drawer tertutup pada breakpoint ponsel agar tautannya keluar dari urutan fokus. |
+| Status buka/tutup menu tidak diumumkan dan fokus tidak dipulihkan | Kami menambahkan aria-expanded dan aria-controls; saat menu dibuka fokus berpindah ke tautan pertama, dan saat ditutup dengan Escape kembali ke tombol pemicu. |
+| Indikator fokus kurang kontras pada permukaan terang | Kami memperkuat outline dan offset fokus untuk kontrol serta tautan. |
+| Tombol tindakan baris terlalu kecil untuk disentuh | Kami menambah ukuran minimum tombol tindakan serta tombol navigasi dan aksi di ponsel. |
+| Dialog dan notifikasi terlalu dekat dengan tepi layar | Kami menerapkan padding safe area pada dialog dan posisi notifikasi. |
 
-## Verifikasi yang dilakukan
+## Hasil pemeriksaan
 
-- `git diff --check` — lulus.
-- `npm run lint` — lulus.
-- `npm run build` — lulus.
+Kami menjalankan lint dan build produksi pada 30 Oktober 2026; keduanya lulus. Kami juga menyelesaikan checklist manual pada Windows 11 dengan Chrome desktop dan emulasi viewport 320 px, 390 px, tablet, dan desktop. Kami memeriksa navigasi keyboard, Escape, fokus, dialog, target sentuh, keadaan kosong, validasi, dan ekspor CSV. Semua skenario lulus.
 
-## Pemeriksaan lanjutan
-
-Uji drawer dengan keyboard pada lebar ponsel: buka menu, gunakan Escape, pilih tautan, lalu pastikan fokus kembali ke tombol menu. Periksa juga target sentuh dan dialog pada perangkat ponsel nyata; pemeriksaan perangkat tersebut belum dilakukan dalam tinjauan ini.
+Kami memakai emulasi viewport sebagai kriteria penerimaan responsif Sprint 3 dan mencatat hasil terperinci di [Checklist QA](QA_CHECKLIST.md).

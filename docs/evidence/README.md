@@ -1,14 +1,25 @@
-# Bukti Survei dan Observasi
+# Kebijakan Bukti Survei dan Observasi
 
-DigitalTwins_Daporbakes.pdf, hlm. 5, memuat bagian bukti foto dokumentasi kegiatan wawancara. Foto asli tidak otomatis disalin atau diunggah ke repository ini. PDF sumber memuat nama dan foto orang, sehingga jangan masukkan PDF atau foto ke repository publik tanpa izin.
+Kami menyimpan bukti proyek secara ringkas dan membatasi data yang bersifat pribadi. Dokumen sumber wawancara menjadi rujukan untuk latar belakang dan kebutuhan. Repository proyek memuat ringkasan temuan, source code, screenshot antarmuka, wireframe, dan foto kegiatan tim.
 
-## Prosedur penyimpanan yang disarankan
+## Keputusan penyimpanan
 
-1. Pastikan pihak yang dapat dikenali memahami tujuan penggunaan, audiens repository, dan jangka penyimpanan; minta izin yang sesuai sebelum membagikan.
-2. Simpan berkas asli pada lokasi terbatas/private yang disetujui, bukan pada repo publik.
-3. Untuk bukti yang memang perlu dilampirkan, gunakan salinan yang sudah meredaksi wajah, identitas, nomor/kontak, atau informasi sensitif yang tidak diperlukan. Simpan original secara aman.
-4. Catat sumber, tanggal penerimaan, batas penggunaan, pemberi izin, dan status izin tanpa memasukkan kontak pribadi ke repo.
-5. Sebelum commit, periksa status Git, daftar file staged, dan visibilitas remote. Pertahankan repo private sampai izin publikasi tegas.
-6. Jika foto resmi kelak diberikan dan disetujui untuk disertakan, letakkan hanya versi yang diizinkan pada folder bukti yang sesuai; tinjau `.gitignore` dan akses repo terlebih dahulu.
+1. Kami menyimpan ringkasan sumber dan keputusan bisnis pada Markdown di repository.
+2. Kami tidak memasukkan nomor telepon, alamat rumah, kontak pelanggan, atau transaksi penjualan individual.
+3. Kami memakai screenshot aplikasi dan wireframe sebagai bukti produk; angka di dalamnya merupakan data demo.
+4. Kami memakai foto aktivitas tim yang disertakan dalam laporan Sprint 3 sebagai dokumentasi visual kerja.
+5. Kami tidak mengunggah foto klien atau dokumen sumber penuh ke repository proyek.
+6. Kami menautkan commit dan Pull Request untuk menunjukkan hasil perubahan dan integrasi.
+7. Kami memeriksa isi file sebelum commit agar data di repository sesuai ruang lingkup laporan.
 
-Tidak ada foto, bukti kunjungan, atau persetujuan yang dibuat dalam dokumen ini. Lihat [ringkasan survei](../sprint-01/SURVEI_DAN_OBSERVASI.md).
+## Bukti yang tersedia
+
+| Bukti | Lokasi | Kegunaan |
+|---|---|---|
+| Ringkasan wawancara | [Survei dan Observasi](../sprint-01/SURVEI_DAN_OBSERVASI.md) | Dasar konteks usaha dan keputusan produk |
+| Screenshot aplikasi | docs/sprint-03/screenshots | Rekaman tiga halaman MVP |
+| Wireframe | docs/sprint-03/wireframes | Susunan layout inti |
+| Foto aktivitas tim | docs/sprint-03/meeting-photos | Dokumentasi visual koordinasi |
+| Riwayat perubahan | Pull Request #11–#13 | Kontribusi fitur, UI, dan dokumentasi |
+
+Kami menyimpan keputusan etika dan lingkup informasi pribadi ini sebagai kebijakan tetap repository.

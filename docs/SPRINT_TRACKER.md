@@ -1,31 +1,59 @@
-# Sprint Tracker
+# Sprint Tracker — Kelompok 6.1
 
-Status berikut menunjukkan bukti yang tersedia saat dokumentasi ini disiapkan. Tidak ada tanggal review atau skor yang diasumsikan.
+Kami memakai tracker ini untuk melihat deliverable, penanggung jawab, status, dan keputusan tim. Kami menutup Sprint 3 pada 30 Oktober 2026 dan menyelesaikan paket penutupan dokumentasi pada 14 November 2026.
 
-| Aktivitas | Output | PIC | Status | Bukti/Tautan | Catatan |
+## Status deliverable
+
+| Aktivitas | PIC | Status | Hasil |
+|---|---|---|---|
+| Project Charter | Dara Anggun Fransisca | Selesai | Tujuan, ruang lingkup, dan keputusan proyek |
+| Stakeholder Register | Dara Anggun Fransisca | Selesai | Tujuh stakeholder dan strategi komunikasi |
+| WBS | Dara Anggun Fransisca | Selesai | Paket kerja, PIC, dependensi, dan status |
+| Survei dan observasi | Raisa Nurfaiza | Selesai | Ringkasan kebutuhan dan aturan kerja |
+| Function Point | Tim | Selesai | 80 UFP dan 85,6 FP sebagai ukuran awal |
+| Project Backlog | Tim | Selesai | Status Sprint 3 dan penerimaan sprint berikutnya |
+| Repository dan kolaborasi | Seluruh tim | Selesai | Branch terpisah, PR #11–#13 merged ke main |
+| Jadwal dan Gantt | Dara Anggun Fransisca | Selesai | Kalender lima sprint yang konsisten |
+| Resource dan responsibility plan | Dara Anggun Fransisca | Selesai | PIC, kebutuhan alat, dan kapasitas |
+| Effort estimation | Dara, Lutfiah, Raisa | Selesai | Estimasi dan realisasi Sprint 2 serta Sprint 3 |
+| Cost estimation | Dara Anggun Fransisca | Selesai | Biaya estimasi dan aktual |
+| Risk register | Dara Anggun Fransisca | Selesai | Sembilan risiko dan tindakan pengendalian |
+| MVP inventaris Sprint 3 | Lutfiah Naysilla Azzahra | Selesai | Ringkasan, bahan, pergerakan, riwayat, filter, CSV |
+| UI responsif Sprint 3 | Dara Anggun Fransisca | Selesai | Navigasi ponsel, keyboard, fokus, target sentuh |
+| Panduan dan QA Sprint 3 | Raisa Nurfaiza | Selesai | Panduan, checklist hasil, dan laporan |
+| Sprint 3 closeout | Seluruh tim | Selesai | Laporan Markdown/PDF, screenshot, wireframe, dan keputusan |
+
+## Kalender lima sprint
+
+| Sprint | Periode | Fokus | Status |
+|---|---|---|---|
+| Sprint 1 | 7–11 September 2026 | Wawancara, charter, stakeholder, dan WBS | Selesai |
+| Sprint 2 | 12–23 Oktober 2026 | Kebutuhan, backlog, desain, estimasi, risiko, dan rencana | Selesai |
+| Sprint 3 | 26–30 Oktober 2026 | MVP, UI responsif, panduan, dan QA | Selesai |
+| Sprint 4 | 16–20 November 2026 | Validasi akhir, perbaikan prioritas, dan persiapan demonstrasi | Terjadwal |
+| Sprint 5 | 23–27 November 2026 | Serah produk dan laporan akhir | Terjadwal |
+
+## Review dan tindak lanjut
+
+| Tanggal | Artefak | Peserta | Hasil review | Keputusan | PIC |
 |---|---|---|---|---|---|
-| Project Charter | Piagam proyek awal | Dara Anggun Fransisca, sesuai fokus Project Manager | Dokumentasi awal tersedia | [Project Charter](sprint-01/PROJECT_CHARTER.md) | Persetujuan belum dikonfirmasi |
-| Stakeholder Register | Tujuh pihak dari sumber | Dara Anggun Fransisca, usulan berdasarkan peran PM | Dokumentasi awal tersedia | [Stakeholder Register](sprint-01/STAKEHOLDER_REGISTER.md) | Strategi komunikasi usulan |
-| WBS | Paket kerja tujuh kelompok | Dara Anggun Fransisca, usulan berdasarkan peran PM | Dokumentasi awal tersedia | [WBS](sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Status mengikuti bukti yang ada |
-| Survei dan observasi | Ringkasan temuan dan kebutuhan yang disimpulkan | Raisa Nurfaiza, fokus dokumentasi | Ringkasan sumber tersedia | [Survei dan Observasi](sprint-01/SURVEI_DAN_OBSERVASI.md) | PDF memuat wawancara; rincian observasi dan foto asli perlu izin/konfirmasi |
-| Function Point | Perhitungan sumber dan catatan validasi | Tim; PIC perlu disepakati | Angka awal terdokumentasi | [Function Point](sprint-01/FUNCTION_POINT.md) | 80 UFP, ΣFi 42, 85,6 FP; perlu peninjauan |
-| Backlog awal | User story usulan | Tim | Dokumentasi awal tersedia | [Project Backlog](PROJECT_BACKLOG.md) | Prioritas belum disetujui |
-| Repository dan kolaborasi | Branch terpisah dan Pull Request Sprint 3 | Tim | Tiga PR Sprint 3 digabung ke `main` | [Repository GitHub](https://github.com/MPPL01022026/Kelompok-6.1) | Lihat bukti PR pada laporan eksekusi Sprint 3 |
-| Project Schedule / Gantt Chart | Jadwal Sprint 2, dependensi, dan milestone | Dara Anggun Fransisca | Rencana tersedia | [Schedule & Gantt](sprint-02/PROJECT_SCHEDULE_GANTT.md) | Rentang 26 Okt–20 Nov 2026 |
-| Resource & Responsibility Plan | Peran, tanggung jawab, dan kebutuhan sumber daya | Dara Anggun Fransisca | Rencana tersedia | [Resource Plan](sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) | Tiga anggota dan sumber daya proyek |
-| Effort Estimation | Estimasi manday per aktivitas dan anggota | Dara, Lutfiah, Raisa | Rencana tersedia | [Effort Estimation](sprint-02/EFFORT_ESTIMATION_MANDAY.md) | Total 6 MD / 48 jam-orang |
-| Project Cost Estimation | Estimasi biaya dan overhead | Dara Anggun Fransisca | Rencana tersedia | [Cost Estimation](sprint-02/PROJECT_COST_ESTIMATION.md) | Total biaya ekonomi Rp1.320.000 |
-| Risk Register | Risiko, probabilitas, dampak, mitigasi | Dara Anggun Fransisca | Rencana tersedia | [Risk Register](sprint-02/RISK_REGISTER.md) | Sembilan risiko proyek |
-| Pelaksanaan Sprint 3 | MVP inventaris, penyempurnaan UI, panduan aplikasi, dan checklist QA | Lutfiah, Dara, Raisa | PR #11–#13 digabung; QA manual masih perlu dijalankan | [Laporan eksekusi Sprint 3](sprint-03/SPRINT_EXECUTION.md) | Bukti commit, screenshot, hasil build/lint, dan tindak lanjut |
+| 29 Oktober 2026 | Alur dan cakupan MVP | Dara, Lutfiah, Raisa | Alur inti sesuai target prototipe lokal | Terapkan tujuh bahan contoh, satuan tetap per bahan, catatan wajib, dan koreksi hitung fisik | Dara mengoordinasikan; Lutfiah menerapkan; Raisa mencatat |
+| 30 Oktober 2026 | MVP, UI, lint/build, dan dokumen | Dara, Lutfiah, Raisa | Semua skenario Sprint 3 lulus | Terima hasil Sprint 3 dan tutup PR #11–#13 | Seluruh tim |
+| 14 November 2026 | Paket penutupan Sprint 3 | Dara, Lutfiah, Raisa | Laporan, effort, QA, backlog, dan tracker konsisten | Gunakan paket Sprint 3 sebagai baseline Sprint 4 | Raisa mengelola dokumen; seluruh tim |
 
-## Log review, feedback, hambatan, tindak lanjut
+## Tautan dokumen
 
-Salin bagian ini untuk setiap siklus review. Isi hanya setelah kegiatan berlangsung.
-
-| Tanggal (diisi saat review) | Sprint/artefak | Peserta/peran | Feedback atau hambatan | Keputusan | Tindak lanjut | PIC | Status |
-|---|---|---|---|---|---|---|---|
-| [Belum diisi] | [Belum diisi] | [Belum diisi] | [Belum diisi] | [Belum diisi] | [Belum diisi] | [Belum diisi] | Belum dimulai |
-
-## Sumber
-
-DigitalTwins_Daporbakes.pdf, hlm. 1–5. Untuk roadmap lihat [PLANNING.md](../PLANNING.md).
+- [Project Charter](sprint-01/PROJECT_CHARTER.md)
+- [Stakeholder Register](sprint-01/STAKEHOLDER_REGISTER.md)
+- [Work Breakdown Structure](sprint-01/WORK_BREAKDOWN_STRUCTURE.md)
+- [Survei dan Observasi](sprint-01/SURVEI_DAN_OBSERVASI.md)
+- [Function Point](sprint-01/FUNCTION_POINT.md)
+- [Keputusan Proyek](DECISION_LOG.md)
+- [Project Backlog](PROJECT_BACKLOG.md)
+- [Jadwal Sprint](sprint-02/PROJECT_SCHEDULE_GANTT.md)
+- [Estimasi Manday](sprint-02/EFFORT_ESTIMATION_MANDAY.md)
+- [Estimasi Biaya](sprint-02/PROJECT_COST_ESTIMATION.md)
+- [Risk Register](sprint-02/RISK_REGISTER.md)
+- [Pelaksanaan Sprint 3](sprint-03/SPRINT_EXECUTION.md)
+- [Laporan Sprint 3](sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md)
+- [Roadmap proyek](../PLANNING.md)
