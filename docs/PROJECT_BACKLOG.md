@@ -1,4 +1,4 @@
-# Product Backlog — Status Sprint 3
+# Product Backlog - Status Sprint 3
 
 Kami menetapkan prioritas dan kriteria backlog berikut sebagai dasar produk. Sprint 3 telah menutup alur pencatatan inti; pekerjaan lanjutan memiliki keputusan ruang lingkup dan penerimaan.
 

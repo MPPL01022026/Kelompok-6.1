@@ -1,4 +1,4 @@
-# Pelaksanaan Sprint 3 — Project Execution
+# Pelaksanaan Sprint 3 - Project Execution
 
 Kami menutup Sprint 3 pada 30 Oktober 2026. Sprint ini menghasilkan MVP inventaris Daporbakes, penyempurnaan UI responsif, panduan penggunaan, dan paket pemeriksaan QA. Kami menyelesaikan dokumentasi penutupan pada 14 November 2026.
 

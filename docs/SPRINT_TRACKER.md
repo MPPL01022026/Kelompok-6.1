@@ -1,4 +1,4 @@
-# Sprint Tracker — Kelompok 6.1
+# Sprint Tracker - Kelompok 6.1
 
 Kami memakai tracker ini untuk melihat deliverable, penanggung jawab, status, dan keputusan tim. Kami menutup Sprint 3 pada 30 Oktober 2026 dan menyelesaikan paket penutupan dokumentasi pada 14 November 2026.
 
@@ -22,6 +22,7 @@ Kami memakai tracker ini untuk melihat deliverable, penanggung jawab, status, da
 | UI responsif Sprint 3 | Dara Anggun Fransisca | Selesai | Navigasi ponsel, keyboard, fokus, target sentuh |
 | Panduan dan QA Sprint 3 | Raisa Nurfaiza | Selesai | Panduan, checklist hasil, dan laporan |
 | Sprint 3 closeout | Seluruh tim | Selesai | Laporan Markdown/PDF, screenshot, wireframe, dan keputusan |
+| Tugas Tahap 4 - Monitoring & Controlling | Dara dan seluruh tim | Selesai 14 November 2026 | Perbandingan jadwal, manday, biaya, isu, perubahan scope, dan tindakan korektif |
 
 ## Kalender lima sprint
 
@@ -56,4 +57,5 @@ Kami memakai tracker ini untuk melihat deliverable, penanggung jawab, status, da
 - [Risk Register](sprint-02/RISK_REGISTER.md)
 - [Pelaksanaan Sprint 3](sprint-03/SPRINT_EXECUTION.md)
 - [Laporan Sprint 3](sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md)
+- [Tahap 4 - Monitoring & Controlling](sprint-04/MONITORING_CONTROLLING.md)
 - [Roadmap proyek](../PLANNING.md)

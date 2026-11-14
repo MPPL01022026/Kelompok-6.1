@@ -1,4 +1,4 @@
-# Hasil QA Manual — MVP Inventaris
+# Hasil QA Manual - MVP Inventaris
 
 Kami menyelesaikan pemeriksaan penerimaan Sprint 3 pada 30 Oktober 2026 terhadap build utama setelah PR #13. Kami memakai Windows 11, Chrome desktop, dan emulasi viewport 390 × 844 piksel. Penguji: Dara Anggun Fransisca, Lutfiah Naysilla Azzahra, dan Raisa Nurfaiza. Hasil keseluruhan: **Lulus**.
 

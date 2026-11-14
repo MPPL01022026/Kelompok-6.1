@@ -1,4 +1,4 @@
-# Daporbakes — Catatan Stok Bahan
+# Daporbakes - Catatan Stok Bahan
 
 Kami mengembangkan prototipe stok bahan baku untuk usaha brownies Daporbakes. Aplikasi membantu pengguna melihat daftar bahan, mencatat pembelian dan pemakaian, menyesuaikan saldo setelah hitung fisik, serta menelusuri perubahan stok.
 

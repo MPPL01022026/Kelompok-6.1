@@ -1,14 +1,43 @@
-# Estimasi dan Realisasi Biaya Sprint 2
+# Estimasi dan Realisasi Biaya Sprint 2–3
 
-Kami menggunakan tarif perencanaan Rp150.000 per manday untuk menghitung shadow cost tenaga kerja. Biaya tenaga kerja bukan pembayaran tunai kepada anggota.
+Kami menggunakan tarif Rp150.000 per manday untuk menghitung shadow cost tenaga kerja. Kami membedakan biaya tenaga kerja dari pengeluaran tunai operasional.
 
-| Komponen | Dasar estimasi | Estimasi | Dasar realisasi | Realisasi |
-|---|---|---:|---|---:|
-| Tenaga kerja tim | 6,00 MD × Rp150.000 | Rp900.000 | 6,30 MD × Rp150.000 | Rp945.000 |
-| Perangkat lunak/layanan | GitHub Free, Figma Starter, Google Drive | Rp0 | Paket gratis tim | Rp0 |
-| Perangkat keras dan internet | 3 anggota × Rp50.000 | Rp150.000 | Alokasi internet aktual 3 anggota | Rp165.000 |
-| Pertemuan/transportasi | 2 sesi × Rp75.000 | Rp150.000 | 2 sesi koordinasi | Rp130.000 |
-| Overhead | 10% tenaga kerja dan operasional | Rp120.000 | 10% × Rp1.240.000 | Rp124.000 |
-| **Total biaya ekonomi** | Tenaga kerja + operasional + overhead | **Rp1.320.000** | Tenaga kerja + operasional + overhead | **Rp1.364.000** |
+## Sprint 2
 
-Kami merealisasikan biaya operasional tunai Rp295.000 dan total biaya ekonomi Rp1.364.000. Kami menghitung overhead aktual dari Rp945.000 biaya tenaga kerja dan Rp295.000 biaya operasional.
+| Komponen | Estimasi | Realisasi |
+|---|---:|---:|
+| Tenaga kerja | 6,00 MD × Rp150.000 = Rp900.000 | 6,30 MD × Rp150.000 = Rp945.000 |
+| Perangkat lunak/layanan | Rp0 | Rp0 |
+| Perangkat keras dan internet | Rp150.000 | Rp165.000 |
+| Pertemuan/transportasi | Rp150.000 | Rp130.000 |
+| Overhead | Rp120.000 | Rp124.000 |
+| **Total biaya ekonomi Sprint 2** | **Rp1.320.000** | **Rp1.364.000** |
+
+## Sprint 3
+
+Kami memakai tarif effort dan struktur biaya yang sama untuk menyiapkan MVP, UI responsif, panduan, dan QA.
+
+| Komponen | Estimasi | Realisasi |
+|---|---:|---:|
+| Tenaga kerja | 5,00 MD × Rp150.000 = Rp750.000 | 5,50 MD × Rp150.000 = Rp825.000 |
+| Perangkat lunak/layanan | Rp0 | Rp0 |
+| Perangkat keras dan internet | Rp150.000 | Rp150.000 |
+| Pertemuan/koordinasi | Rp150.000 | Rp130.000 |
+| Overhead | Rp105.000 | Rp110.500 |
+| **Total biaya ekonomi Sprint 3** | **Rp1.155.000** | **Rp1.215.500** |
+
+Kami menghitung overhead sebesar 10% dari tenaga kerja dan biaya operasional langsung. Biaya tenaga kerja merupakan shadow cost; biaya perangkat, internet, dan pertemuan menjadi pengeluaran operasional.
+
+## Rekap kumulatif sampai penutupan Sprint 3
+
+| Komponen | Anggaran | Aktual | Varians |
+|---|---:|---:|---:|
+| Tenaga kerja | Rp1.650.000 | Rp1.770.000 | +Rp120.000 |
+| Perangkat lunak/layanan | Rp0 | Rp0 | Rp0 |
+| Perangkat keras, internet, dan pertemuan | Rp600.000 | Rp575.000 | -Rp25.000 |
+| Overhead | Rp225.000 | Rp234.500 | +Rp9.500 |
+| **Total biaya ekonomi** | **Rp2.475.000** | **Rp2.579.500** | **+Rp104.500** |
+
+Kami menutup Sprint 3 dengan biaya ekonomi kumulatif 4,22% di atas baseline. Pengeluaran operasional langsung kumulatif sebesar Rp575.000; shadow cost tenaga kerja sebesar Rp1.770.000; overhead sebesar Rp234.500.
+
+Rincian manday ada pada [Estimasi Manday Sprint 2](EFFORT_ESTIMATION_MANDAY.md) dan [Laporan Pelaksanaan Sprint 3](../sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md).
