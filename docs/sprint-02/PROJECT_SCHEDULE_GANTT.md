@@ -6,7 +6,7 @@ Kami menetapkan kalender lima sprint dengan Sprint 2 pada 12–23 Oktober dan Sp
 
 | ID | Aktivitas | Durasi kerja | Mulai | Selesai | Dependensi | Kriteria selesai |
 |---|---|---:|---|---|---|---|
-| S2.1 | Kickoff, kalender, PIC, dan cara kerja | 1 hari | 12 Okt 2026 | 12 Okt 2026 | — | PIC dan ritme kerja tercatat |
+| S2.1 | Kickoff, kalender, PIC, dan cara kerja | 1 hari | 12 Okt 2026 | 12 Okt 2026 | - | PIC dan ritme kerja tercatat |
 | S2.2 | Inventarisasi sumber, bukti, dan kebutuhan | 1 hari | 13 Okt 2026 | 13 Okt 2026 | S2.1 | Paket sumber dan daftar keputusan selesai |
 | S2.3 | Validasi alur bisnis dan aturan tugas | 1 hari | 14 Okt 2026 | 14 Okt 2026 | S2.2 | Keputusan kebutuhan masuk ke decision log |
 | S2.4 | Tetapkan satuan, minimum stok, koreksi, dan rekomendasi | 1 hari | 15 Okt 2026 | 15 Okt 2026 | S2.3 | Aturan produk ditetapkan |

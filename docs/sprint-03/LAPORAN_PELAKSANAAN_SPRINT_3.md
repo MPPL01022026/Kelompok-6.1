@@ -1,5 +1,5 @@
 # Laporan Pelaksanaan Sprint 3
-## Project Execution — Kelompok 6.1
+## Project Execution - Kelompok 6.1
 
 | Informasi | Rincian |
 |---|---|
