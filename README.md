@@ -6,7 +6,7 @@ Daporbakes adalah prototipe untuk mencatat dan memantau bahan baku usaha brownie
 
 Sprint 4 berlangsung pada 16–20 November 2026 dengan fokus validasi akhir, perbaikan prioritas, dan persiapan demonstrasi. Baseline MVP diselesaikan pada Sprint 3; paket penutupan dokumentasinya selesai pada 14 November. Per 18 November, Sprint 4 masih berjalan dan belum ditutup.
 
-Perbaikan aplikasi pada tahap ini mencakup notifikasi aktivitas pada ikon lonceng, navigasi menu pada layar kecil, dan penghapusan bahan dengan konfirmasi. Saat bahan dihapus, catatan riwayat stok yang terkait juga dihapus.
+Perbaikan aplikasi pada tahap ini mencakup notifikasi aktivitas pada ikon lonceng, navigasi bawah pada layar kecil, dan penghapusan bahan dengan konfirmasi. Saat bahan dihapus, catatan riwayat stok yang terkait juga dihapus.
 
 Dokumen [Monitoring & Controlling](docs/sprint-04/MONITORING_CONTROLLING.md) mencatat jadwal, effort, biaya, isu, dan rencana pengendalian berdasarkan data sampai penutupan Sprint 3.
 
@@ -17,7 +17,7 @@ Dokumen [Monitoring & Controlling](docs/sprint-04/MONITORING_CONTROLLING.md) men
 - Catat stok masuk, stok keluar, dan penyesuaian berdasarkan hasil hitung fisik.
 - Lihat pemberitahuan aktivitas setelah stok atau daftar bahan diubah. Pemberitahuan dan data tersimpan di browser pada perangkat yang sedang digunakan.
 - Cari dan saring riwayat berdasarkan teks dan periode, lalu unduh hasil yang tampil sebagai CSV.
-- Navigasi menu responsif untuk layar ponsel dan desktop.
+- Navigasi samping pada desktop dan bilah navigasi bawah pada ponsel.
 
 ## Menjalankan aplikasi
 

@@ -4,7 +4,7 @@ Kami membuat prototipe ini untuk mengelola bahan baku, mencatat perubahan stok, 
 
 ## Status Sprint 4
 
-Sprint 4 berlangsung pada 16–20 November 2026 dengan fokus validasi akhir, perbaikan prioritas, dan persiapan demonstrasi. Pembaruan aplikasi mencakup panel aktivitas pada ikon lonceng, menu navigasi ponsel dengan tombol buka dan tutup, serta penghapusan bahan melalui konfirmasi. Penghapusan bahan juga menghapus catatan stok terkait.
+Sprint 4 berlangsung pada 16–20 November 2026 dengan fokus validasi akhir, perbaikan prioritas, dan persiapan demonstrasi. Pembaruan aplikasi mencakup panel aktivitas pada ikon lonceng, bilah navigasi bawah pada ponsel, serta penghapusan bahan melalui konfirmasi. Penghapusan bahan juga menghapus catatan stok terkait.
 
 ## Menjalankan aplikasi
 
