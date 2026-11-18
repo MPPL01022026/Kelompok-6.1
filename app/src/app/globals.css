@@ -57,3 +57,35 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 .notification-empty span,.notification-caption{font-size:8px}
 .notification-caption{margin:0;padding:12px 14px}
 @media(max-width:620px){.notification-panel{right:-3px;width:min(320px,calc(100vw - 24px))}}
+
+.rail-close{display:none;position:absolute;top:17px;right:12px;width:40px;height:40px;place-items:center;border:1px solid #c7b39638;border-radius:4px;background:transparent;color:#f7f0e5}
+.rail-close:hover{background:#ffffff10}
+.delete-action{color:#a35e42}
+.delete-action:hover{background:#f4e9e4;color:#914b38}
+.button.danger{border-color:#a4573b;background:#a4573b;color:#fffaf0}
+.button.danger:hover{border-color:#8f4932;background:#8f4932}
+.delete-dialog .dialog-intro{line-height:1.65}
+.ledger-columns,.ingredient-row{grid-template-columns:minmax(190px,1.6fr) minmax(125px,1fr) minmax(115px,.9fr) minmax(83px,.7fr) 110px}
+@media(max-width:1100px){.ledger-columns,.ingredient-row{grid-template-columns:minmax(115px,1.2fr) minmax(78px,.85fr) minmax(72px,.8fr) 65px 104px;gap:6px;padding-inline:10px}}
+@media(max-width:820px){
+  .masthead{position:relative}
+  .menu-toggle{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid var(--rule);border-radius:5px;background:var(--paper);color:var(--cocoa)}
+  .menu-toggle:hover{background:var(--ground)}
+  .crumb{margin-left:50px}
+  .rail-close{display:grid}
+  .ledger-columns,.ingredient-row{grid-template-columns:minmax(130px,1.3fr) minmax(98px,.9fr) minmax(82px,.8fr) 70px 110px;gap:6px;padding-inline:10px}
+}
+@media(max-width:620px){
+  .menu-toggle{left:12px}
+  .crumb{margin-left:50px}
+  .ingredient-row{grid-template-columns:minmax(88px,1fr) minmax(60px,.75fr) minmax(76px,auto);grid-template-rows:auto auto;row-gap:6px;padding:8px}
+  .row-actions{grid-column:1/-1;grid-row:2;gap:4px}
+  .row-action{width:36px;height:36px;min-width:36px;min-height:36px}
+  .ledger-columns{grid-template-columns:minmax(88px,1fr) minmax(60px,.75fr) minmax(76px,auto);gap:5px;padding-inline:8px}
+  .ledger-columns span:last-child{display:none}
+}
+@media(max-width:360px){
+  .ingredient-row{grid-template-columns:minmax(82px,1fr) minmax(56px,.7fr) minmax(70px,auto)}
+  .ledger-columns{grid-template-columns:minmax(82px,1fr) minmax(56px,.7fr) minmax(70px,auto)}
+  .row-actions{gap:2px}
+}

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDownLeft, ArrowDownRight, ArrowLeftRight, ArrowUpRight, Bell,
   Check, CircleHelp, Download, History, Leaf,
-  Menu, Package, Plus, Search, Settings2, Wheat, X,
+  Menu, Package, Plus, Search, Settings2, Trash2, Wheat, X,
 } from "lucide-react";
 import {
   formatDate, formatQuantity, getStock, INITIAL_STATE,
@@ -12,7 +12,7 @@ import {
 } from "@/lib/inventory";
 
 type View = "overview" | "ingredients" | "history";
-type Dialog = "movement" | "ingredient" | "edit" | null;
+type Dialog = "movement" | "ingredient" | "edit" | "delete" | null;
 const storageKey = "bag-dapoorbakes-inventory-v3";
 const previousStorageKey = "bag-dapoorbakes-inventory-v2";
 const legacyStorageKey = "bag-dapoorbakes-inventory-v1";
@@ -123,6 +123,18 @@ function IngredientDialog({ initial, onClose, onSave }: {
   </form></div>;
 }
 
+function DeleteIngredientDialog({ ingredient, movementCount, onClose, onDelete }: {
+  ingredient: Ingredient; movementCount: number; onClose: () => void; onDelete: () => void;
+}) {
+  return <div className="overlay" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+    <section className="dialog delete-dialog" role="alertdialog" aria-labelledby="delete-ingredient-title" aria-describedby="delete-ingredient-description">
+      <div className="dialog-heading"><div><span className="kicker">HAPUS BAHAN</span><h2 id="delete-ingredient-title">Hapus {ingredient.name}?</h2></div><button className="icon-button" type="button" onClick={onClose} aria-label="Tutup dialog"><X size={18} /></button></div>
+      <p id="delete-ingredient-description" className="dialog-intro">{movementCount > 0 ? `Bahan ini memiliki ${movementCount} catatan riwayat stok. Bahan dan catatan terkait akan dihapus.` : "Bahan ini belum memiliki catatan riwayat stok."} Tindakan ini tidak dapat dibatalkan.</p>
+      <div className="dialog-actions"><button className="button secondary" type="button" onClick={onClose}>Batal</button><button className="button danger" type="button" onClick={onDelete}><Trash2 size={15} />Hapus bahan</button></div>
+    </section>
+  </div>;
+}
+
 function movementLabel(type: MovementType) { return type === "in" ? "Stok masuk" : type === "out" ? "Stok keluar" : "Penyesuaian stok"; }
 
 export default function Home() {
@@ -143,6 +155,7 @@ export default function Home() {
   const [toast, setToast] = useState("");
   const [mobileNav, setMobileNav] = useState(false);
   const [today, setToday] = useState("");
+  const closeMobileNav = () => { setMobileNav(false); menuButtonRef.current?.focus(); };
   useEffect(() => { setState(readSavedState()); setReady(true); setNotifications(readSavedNotifications()); setNotificationsReady(true); setToday(new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date())); }, []);
   useEffect(() => { if (ready) { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch { setToast("Penyimpanan browser penuh. Unduh riwayat stok sebagai CSV."); } } }, [state, ready]);
   useEffect(() => { if (notificationsReady) { try { localStorage.setItem(notificationStorageKey, JSON.stringify(notifications)); } catch { setToast("Penyimpanan browser penuh. Pemberitahuan terbaru tidak dapat disimpan."); } } }, [notifications, notificationsReady]);
@@ -161,8 +174,7 @@ export default function Home() {
     railRef.current?.querySelector<HTMLButtonElement>(".rail-link")?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setMobileNav(false);
-        menuButtonRef.current?.focus();
+        closeMobileNav();
       }
     };
     window.addEventListener("keydown", onKey);
@@ -213,6 +225,15 @@ export default function Home() {
     }
     setDialog(null); setEditing(undefined);
   };
+  const removeIngredient = (ingredient: Ingredient) => {
+    const removedMovements = state.movements.filter((movement) => movement.ingredientId === ingredient.id).length;
+    setState((previous) => ({
+      ingredients: previous.ingredients.filter((item) => item.id !== ingredient.id),
+      movements: previous.movements.filter((movement) => movement.ingredientId !== ingredient.id),
+    }));
+    addNotification("Bahan dihapus", `${ingredient.name} · ${removedMovements} catatan stok terkait dihapus`);
+    setDialog(null); setEditing(undefined); notify("Bahan dan catatan riwayat terkait dihapus.");
+  };
   const exportCsv = () => {
     const safeCell = (value: string) => `"${(/^[=+@\-]/.test(value) ? `'${value}` : value).replaceAll('"', '""')}"`;
     const lines = [["Waktu", "Bahan", "Jenis perubahan", "Jumlah", "Satuan", "Catatan"], ...filteredMovements.map((movement) => {
@@ -226,16 +247,14 @@ export default function Home() {
   const changeView = (next: View) => {
     setView(next);
     setQuery("");
-    if (mobileNav) {
-      setMobileNav(false);
-      menuButtonRef.current?.focus();
-    }
+    if (mobileNav) closeMobileNav();
   };
   const openEdit = (ingredient: Ingredient) => { setEditing(ingredient); setDialog("edit"); };
   const startMovement = (ingredient?: Ingredient) => { setEditing(ingredient); setDialog("movement"); };
 
   return <div className="workspace">
     <aside id="stock-navigation" ref={railRef} className={`rail ${mobileNav ? "rail-open" : ""}`}>
+      <button className="rail-close" type="button" aria-label="Tutup menu navigasi" onClick={closeMobileNav}><X size={19} /></button>
       <a className="wordmark" href="#overview" onClick={() => changeView("overview")}><span className="wordmark-icon"><Wheat size={20} /></span><span><strong>Dapor<span>bakes</span></strong><small>BUKU STOK</small></span></a>
       <div className="rail-section">USAHA</div><div className="bakery-switch"><span className="bakery-monogram">D</span><span><strong>Daporbakes</strong><small>Stok bahan dapur</small></span></div>
       <div className="rail-section nav-label">PERSEDIAAN</div><nav className="rail-nav" aria-label="Navigasi stok">
@@ -243,9 +262,9 @@ export default function Home() {
         <button className={view === "ingredients" ? "rail-link active" : "rail-link"} onClick={() => changeView("ingredients")}><Package size={17} />Daftar bahan<span className="rail-count">{state.ingredients.length}</span></button>
         <button className={view === "history" ? "rail-link active" : "rail-link"} onClick={() => changeView("history")}><History size={17} />Riwayat stok</button>
       </nav>
-      <div className="rail-bottom"><div className="stock-note"><span className="note-stamp"><Leaf size={14} /></span><p>Stok awal masih berupa contoh. Hitung bahan di rak sebelum mulai mencatat.</p><button onClick={() => changeView("ingredients")}>Periksa daftar bahan <span>↗</span></button></div><div className="account"><span className="account-avatar">L</span><span><strong>Data lokal</strong><small>Tidak tersinkron</small></span><button aria-label="Tentang penyimpanan data" onClick={() => notify("Data tersimpan di browser ini dan tidak tersinkron ke perangkat lain.")}><CircleHelp size={16} /></button></div></div>
+      <div className="rail-bottom"><div className="stock-note"><span className="note-stamp"><Leaf size={14} /></span><p>Catat pembelian, pemakaian, dan hasil hitung fisik agar stok tetap akurat.</p><button onClick={() => changeView("ingredients")}>Periksa daftar bahan <span>↗</span></button></div><div className="account"><span className="account-avatar">L</span><span><strong>Data lokal</strong><small>Tidak tersinkron</small></span><button aria-label="Tentang penyimpanan data" onClick={() => notify("Data tersimpan di browser ini dan tidak tersinkron ke perangkat lain.")}><CircleHelp size={16} /></button></div></div>
     </aside>
-    {mobileNav && <button className="scrim" aria-label="Tutup menu navigasi" onClick={() => { setMobileNav(false); menuButtonRef.current?.focus(); }} />}
+    {mobileNav && <button className="scrim" aria-label="Tutup menu navigasi" onClick={closeMobileNav} />}
     <main className="main-column">
       <header className="masthead"><button ref={menuButtonRef} className="icon-button menu-toggle" aria-label="Buka menu navigasi" aria-expanded={mobileNav} aria-controls="stock-navigation" onClick={() => setMobileNav(true)}><Menu size={20} /></button><div className="crumb">Dapur <span>/</span> <strong>{view === "overview" ? "Ringkasan" : view === "ingredients" ? "Daftar bahan" : "Riwayat stok"}</strong></div><div className="masthead-right"><span className="today" suppressHydrationWarning>{today}</span><div ref={notificationRef} className="notification-area"><button className={`reminder ${lowStock.length || notifications.some((item) => !item.read) ? "has-alert" : ""}`} aria-label={`Pemberitahuan${notifications.some((item) => !item.read) ? `, ${notifications.filter((item) => !item.read).length} belum dibaca` : ""}`} aria-expanded={notificationsOpen} aria-controls="notification-panel" onClick={toggleNotifications}><Bell size={17} />{notifications.some((item) => !item.read) ? <span className="notification-count">{notifications.filter((item) => !item.read).length > 9 ? "9+" : notifications.filter((item) => !item.read).length}</span> : lowStock.length > 0 && <i />}</button>{notificationsOpen && <section id="notification-panel" className="notification-panel" aria-label="Pemberitahuan"><div className="notification-heading"><div><strong>Pemberitahuan</strong><small>Perubahan pada daftar stok</small></div><button aria-label="Tutup pemberitahuan" onClick={() => setNotificationsOpen(false)}><X size={15} /></button></div>{lowStock.length > 0 && <button className="notification-low-stock" onClick={() => { setNotificationsOpen(false); changeView("ingredients"); setGroup("Semua kelompok"); }}><Bell size={15} /><span><strong>{lowStock.length} bahan perlu dicek</strong><small>{lowStock.map(({ ingredient }) => ingredient.name).join(", ")}</small></span><ArrowDownRight size={14} /></button>}{notifications.length > 0 ? <div className="notification-list">{notifications.map((item) => <article className={`notification-item ${item.read ? "" : "unread"}`} key={item.id}><span className="notification-check"><Check size={13} /></span><div><strong>{item.title}</strong><p>{item.detail}</p><time suppressHydrationWarning>{ready ? formatDate(item.createdAt) : ""}</time></div></article>)}</div> : lowStock.length === 0 ? <div className="notification-empty"><Bell size={19} /><strong>Belum ada pemberitahuan</strong><span>Perubahan stok atau bahan akan muncul di sini.</span></div> : <p className="notification-caption">Aktivitas terbaru akan muncul di sini.</p>}</section>}</div><span className="head-rule" /><span className="local-status"><i /> Data tersimpan di perangkat ini</span></div></header>
       <div className="page">
@@ -256,12 +275,10 @@ export default function Home() {
           {lowStock.length > 0 && <button className="low-stock-note" aria-label="Lihat bahan yang perlu dicek" onClick={() => { changeView("ingredients"); setGroup("Semua kelompok"); }}><span className="alert-mark"><Bell size={15} /></span><span><strong>{lowStock.map(({ ingredient }) => ingredient.name).join(", ")} perlu dicek</strong><small>Stok mencapai batas minimum atau kurang. Hitung ulang sebelum belanja.</small></span><span className="alert-arrow">Lihat bahan</span></button>}
         </>}
 
-        {view === "ingredients" && <div className="context-note"><CircleHelp size={16} /><span>Stok awal dan batas minimum masih berupa contoh. Perbarui setelah menghitung bahan, lalu gunakan <strong>Catat perubahan → Sesuaikan stok</strong>.</span></div>}
-
         {view !== "history" && <section className="ledger panel">
           <div className="ledger-heading"><div><span className="kicker">STOK BAHAN</span><h2>{view === "overview" ? "Daftar stok" : "Semua bahan"}<span className="count-mark">{String(stockRows.length).padStart(2, "0")}</span></h2></div><div className="ledger-tools"><label className="search-control"><Search size={15} /><input aria-label="Cari nama bahan" placeholder="Cari nama bahan" value={query} onChange={(event) => setQuery(event.target.value)} /><kbd>/</kbd></label>{view === "ingredients" && <select className="group-select" aria-label="Pilih kelompok bahan" value={group} onChange={(event) => setGroup(event.target.value)}><option>Semua kelompok</option>{[...new Set(state.ingredients.map((item) => item.category))].map((item) => <option key={item}>{item}</option>)}</select>}</div></div>
           <div className="ledger-columns"><span>BAHAN</span><span>STOK SAAT INI</span><span>BATAS MINIMUM</span><span>STATUS</span><span /></div>
-          {filteredIngredients.map(({ ingredient, stock }) => { const isLow = stock <= ingredient.minimum; const pct = ingredient.minimum > 0 ? Math.min(100, stock / (ingredient.minimum * 2.5) * 100) : 100; return <article className="ingredient-row" key={ingredient.id}><div className="ingredient-cell"><span className="ingredient-swatch" style={{ backgroundColor: ingredient.color }} /><span><strong>{ingredient.name}</strong><small>{ingredient.category}</small></span></div><div className="amount-cell"><strong>{formatQuantity(stock)}</strong><small>{ingredient.unit}</small><span className="amount-track"><i className={isLow ? "track-low" : ""} style={{ width: `${Math.max(4, pct)}%` }} /></span></div><div className="limit-cell"><strong>{formatQuantity(ingredient.minimum)}</strong><small>{ingredient.unit}</small></div><div><span className={`condition ${isLow ? "condition-low" : "condition-ok"}`}><i />{isLow ? "Perlu dicek" : "Cukup"}</span></div><div className="row-actions"><button className="row-action" title={`Ubah ${ingredient.name}`} aria-label={`Ubah ${ingredient.name}`} onClick={() => openEdit(ingredient)}><Settings2 size={15} /></button><button className="row-action add-action" title={`Catat ${ingredient.name}`} aria-label={`Catat perubahan stok ${ingredient.name}`} onClick={() => startMovement(ingredient)}><Plus size={16} /></button></div></article>; })}
+          {filteredIngredients.map(({ ingredient, stock }) => { const isLow = stock <= ingredient.minimum; const pct = ingredient.minimum > 0 ? Math.min(100, stock / (ingredient.minimum * 2.5) * 100) : 100; return <article className="ingredient-row" key={ingredient.id}><div className="ingredient-cell"><span className="ingredient-swatch" style={{ backgroundColor: ingredient.color }} /><span><strong>{ingredient.name}</strong><small>{ingredient.category}</small></span></div><div className="amount-cell"><strong>{formatQuantity(stock)}</strong><small>{ingredient.unit}</small><span className="amount-track"><i className={isLow ? "track-low" : ""} style={{ width: `${Math.max(4, pct)}%` }} /></span></div><div className="limit-cell"><strong>{formatQuantity(ingredient.minimum)}</strong><small>{ingredient.unit}</small></div><div><span className={`condition ${isLow ? "condition-low" : "condition-ok"}`}><i />{isLow ? "Perlu dicek" : "Cukup"}</span></div><div className="row-actions"><button className="row-action" title={`Ubah ${ingredient.name}`} aria-label={`Ubah ${ingredient.name}`} onClick={() => openEdit(ingredient)}><Settings2 size={15} /></button><button className="row-action add-action" title={`Catat ${ingredient.name}`} aria-label={`Catat perubahan stok ${ingredient.name}`} onClick={() => startMovement(ingredient)}><Plus size={16} /></button><button className="row-action delete-action" title={`Hapus ${ingredient.name}`} aria-label={`Hapus ${ingredient.name}`} onClick={() => { setEditing(ingredient); setDialog("delete"); }}><Trash2 size={15} /></button></div></article>; })}
           {filteredIngredients.length === 0 && <div className="empty-ledger"><Package size={22} /><strong>{query ? "Bahan tidak ditemukan" : "Belum ada bahan"}</strong><span>{query ? "Coba kata kunci lain atau pilih kelompok berbeda." : "Tambahkan bahan untuk mulai mencatat stok."}</span>{view === "ingredients" && !query && <button className="button secondary" onClick={() => setDialog("ingredient")}><Plus size={14} />Tambah bahan</button>}</div>}
           <div className="ledger-foot"><span>Stok dihitung dari stok awal dan setiap perubahan yang dicatat.</span>{view === "overview" && <button onClick={() => changeView("ingredients")}>Kelola bahan <ArrowDownRight size={14} /></button>}</div>
         </section>}
@@ -274,6 +291,7 @@ export default function Home() {
       </div>
     </main>
     {dialog === "movement" && <MovementDialog key={editing?.id ?? "movement"} initialIngredientId={editing?.id} ingredients={state.ingredients} stockFor={stockFor} onClose={() => { setDialog(null); setEditing(undefined); }} onSave={addMovement} />}
+    {dialog === "delete" && editing && <DeleteIngredientDialog ingredient={editing} movementCount={state.movements.filter((movement) => movement.ingredientId === editing.id).length} onClose={() => { setDialog(null); setEditing(undefined); }} onDelete={() => removeIngredient(editing)} />}
     {(dialog === "ingredient" || dialog === "edit") && <IngredientDialog initial={dialog === "edit" ? editing : undefined} onClose={() => { setDialog(null); setEditing(undefined); }} onSave={saveIngredient} />}
     {toast && <div className="toast" role="status"><Check size={16} />{toast}<button aria-label="Tutup pemberitahuan" onClick={() => setToast("")}><X size={14} /></button></div>}
   </div>;
