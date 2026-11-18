@@ -1,4 +1,4 @@
-# Daporbakes — Catatan Stok Bahan
+# Daporbakes: Catatan Stok Bahan
 
 Daporbakes adalah prototipe untuk mencatat dan memantau bahan baku usaha brownies. Pengguna dapat mengelola daftar bahan, mencatat pergerakan stok, melihat bahan yang perlu diperiksa, dan meninjau riwayat perubahan.
 
